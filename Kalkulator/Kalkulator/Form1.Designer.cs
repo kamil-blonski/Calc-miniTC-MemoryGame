@@ -222,12 +222,16 @@
             // 
             // tb
             // 
+            this.tb.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tb.Enabled = false;
             this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tb.Location = new System.Drawing.Point(12, 12);
             this.tb.Multiline = true;
             this.tb.Name = "tb";
-            this.tb.Size = new System.Drawing.Size(371, 56);
+            this.tb.ReadOnly = true;
+            this.tb.Size = new System.Drawing.Size(371, 48);
             this.tb.TabIndex = 15;
+            this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
             // 
             // tbTest
             // 

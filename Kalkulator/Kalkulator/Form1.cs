@@ -48,7 +48,7 @@ namespace Kalkulator
         {
             assignNumber(tb.Text);
             typeOfFunction = '=';
-            bReset_Click(sender, e);
+            resetCalculations();
             //wywołanie funkcji z działaniem
         }
 
@@ -117,6 +117,15 @@ namespace Kalkulator
         }
         //My functions
 
+        private void resetCalculations() // After user click = calc start working from beginign.
+        {
+            firstNumber = null;
+            secondNumber = null;
+            lineOfItem = null;
+            typeOfFunction = 'x';
+            lShowLines.Text = "";
+            listOfElements.Clear();
+        }
         private void fillInTb(String sign) //It's useing to fill in text box with numbers inputed by user. 
         {
             Console.WriteLine("Działa fillInTb");
@@ -146,49 +155,61 @@ namespace Kalkulator
             Console.WriteLine("Pierwsza liczba assign: " + firstNumber + " Druga liczba: " + secondNumber);
         }
 
+        private void tb_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
+            double result = 0;
             if (firstNumber == "" || secondNumber == "") //Prevent from bug when user start with push + / - buttons several times.
                 return 0;                                //Prevent also from input 7+++ is equal 28.
-            listOfElements.Add(firstNumber);
-            listOfElements.Add(secondNumber);
-            listOfElements.Add(sign.ToString());
+
             Console.WriteLine("Działa doTheMathXd");
-            double firstNumberH = Double.Parse(firstNumber);
-            double secondNumberH = Double.Parse(secondNumber);
-            //Console.WriteLine("Pierwsza liczba doTheMath: " + firstNumberH + " Druga liczba: " + secondNumberH);
-            double result = 0;
-            if (sign.Equals('+'))
-                result = firstNumberH + secondNumberH;
-            else if (sign.Equals('-'))
-                result = firstNumberH - secondNumberH;
-            else if (sign.Equals('*'))
-                result = firstNumberH * secondNumberH;
-            else if (sign.Equals('/'))
-            {
-                if (secondNumberH == 0)
-                {
-                    bReset_Click(new object(), new EventArgs());
-                    Console.WriteLine("Przez 0");
-                    tb.Text = "Nie można dzielić przez 0!";
-                    return 0;
-                }
-                else
-                    result = firstNumberH / secondNumberH;
-            }
-            else if(sign.Equals('=')) 
+            double firstNumberH;
+            double secondNumberH;
+            if (!(Double.TryParse(firstNumber, out firstNumberH) && Double.TryParse(secondNumber, out secondNumberH))) //Prevent from wrong input like: 2/0=komunikat+2=bug.
             {
                 return 0;
             }
-            String help = "";
-            for (int i = 0; i < listOfElements.Count(); i++)
-                help += listOfElements[i];
-            lShowLines.Text = help;
-            tb.Text = "";
-            tbTest.Text = result.ToString();
-            this.firstNumber = result.ToString();
+            else
+            {
+                listOfElements.Add(firstNumber);
+                listOfElements.Add(secondNumber);
+                listOfElements.Add(sign.ToString());
+                //Console.WriteLine("Pierwsza liczba doTheMath: " + firstNumberH + " Druga liczba: " + secondNumberH);
+                
+                if (sign.Equals('+'))
+                    result = firstNumberH + secondNumberH;
+                else if (sign.Equals('-'))
+                    result = firstNumberH - secondNumberH;
+                else if (sign.Equals('*'))
+                    result = firstNumberH * secondNumberH;
+                else if (sign.Equals('/'))
+                {
+                    if (secondNumberH == 0)
+                    {
+                        bReset_Click(new object(), new EventArgs());
+                        Console.WriteLine("Przez 0");
+                        tb.Text = "Nie można dzielić przez 0!";
+                        return 0;
+                    }
+                    else
+                        result = firstNumberH / secondNumberH;
+                }
+                else if (sign.Equals('='))
+                {
+                    return 0;
+                }
+                String help = "";
+                for (int i = 0; i < listOfElements.Count(); i++)
+                    help += listOfElements[i];
+                lShowLines.Text = help;
+                tb.Text = result.ToString();
+
+                this.firstNumber = result.ToString();
+            }
             return result;
         }
     }
