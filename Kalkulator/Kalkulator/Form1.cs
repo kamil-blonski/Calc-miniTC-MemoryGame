@@ -23,30 +23,30 @@ namespace Kalkulator
 
         private void bAddition_Click(object sender, EventArgs e)
         {
-            assignNumber(tb.Text);
+            whetherassignNumberStart(tb.Text);
             typeOfFunction = '+';
         }
         private void bSubtraction_Click(object sender, EventArgs e)
         {
-            assignNumber(tb.Text);
+            whetherassignNumberStart(tb.Text);
             typeOfFunction = '-';
 
         }
         private void bMultiplication_Click(object sender, EventArgs e)
         {
-            assignNumber(tb.Text);
+            whetherassignNumberStart(tb.Text);
             typeOfFunction = '*';
         }
 
         private void bDivision_Click(object sender, EventArgs e)
         {
-            assignNumber(tb.Text);
+            whetherassignNumberStart(tb.Text);
             typeOfFunction = '/';
             
         }
         private void bEqual_Click(object sender, EventArgs e)
         {
-            assignNumber(tb.Text);
+            whetherassignNumberStart(tb.Text);
             typeOfFunction = '=';
             resetCalculations();
             //wywołanie funkcji z działaniem
@@ -117,6 +117,15 @@ namespace Kalkulator
         }
         //My functions
 
+        private void whetherassignNumberStart(string number) //fixet bug like, input: +++++6 -> firstNumber is empty, secondNumber=6
+        {
+            if (tb.Text != "" && tb.Text != null)
+            {
+                assignNumber(number);
+            }
+                
+        } 
+
         private void resetCalculations() // After user click = calc start working from beginign.
         {
             firstNumber = null;
@@ -163,8 +172,8 @@ namespace Kalkulator
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
             double result = 0;
-            if (firstNumber == "" || secondNumber == "") //Prevent from bug when user start with push + / - buttons several times.
-                return 0;                                //Prevent also from input 7+++ is equal 28.
+            /*if (firstNumber == "" || secondNumber == "") //Prevent from bug when user start with push + / - buttons several times.
+                return 0;                                //Prevent also from input 7+++ is equal 28.*/
 
             Console.WriteLine("Działa doTheMathXd");
             double firstNumberH;
