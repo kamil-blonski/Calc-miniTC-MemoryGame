@@ -15,6 +15,7 @@ namespace Kalkulator
         private  char typeOfFunction;
         private String firstNumber, secondNumber;
         private String lineOfItem;
+        Boolean doubleClick = false; //Prevent from wrong output for input 4+++ = 16
         List<String> listOfElements = new List<String>();
         public Form1()
         {
@@ -23,83 +24,76 @@ namespace Kalkulator
 
         private void bAddition_Click(object sender, EventArgs e)
         {
-            whetherassignNumberStart(tb.Text);
-            typeOfFunction = '+';
+            doubleClickF('+');
         }
         private void bSubtraction_Click(object sender, EventArgs e)
         {
-            whetherassignNumberStart(tb.Text);
-            typeOfFunction = '-';
-
+            doubleClickF('-');
         }
         private void bMultiplication_Click(object sender, EventArgs e)
         {
-            whetherassignNumberStart(tb.Text);
-            typeOfFunction = '*';
+            doubleClickF('*');
         }
 
         private void bDivision_Click(object sender, EventArgs e)
         {
-            whetherassignNumberStart(tb.Text);
-            typeOfFunction = '/';
-            
+            doubleClickF('/');
         }
         private void bEqual_Click(object sender, EventArgs e)
         {
-            whetherassignNumberStart(tb.Text);
-            typeOfFunction = '=';
+            doubleClickF('=');
             resetCalculations();
-            //wywołanie funkcji z działaniem
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
             fillInTb("1");
+            doubleClick = false;
         }
         private void b2_Click(object sender, EventArgs e)
         {
             fillInTb("2");
-            
+            doubleClick = false;
         }
         private void b3_Click(object sender, EventArgs e)
         {
             fillInTb("3");
-            
+            doubleClick = false;
         }
         private void b4_Click(object sender, EventArgs e)
         {
             fillInTb("4");
-            
+            doubleClick = false;
         }
         private void b5_Click(object sender, EventArgs e)
         {
             fillInTb("5");
-            
+            doubleClick = false;
         }
         private void b6_Click(object sender, EventArgs e)
         {
             fillInTb("6");
-           
+            doubleClick = false;
         }
         private void b7_Click(object sender, EventArgs e)
         {
             fillInTb("7");
-            
+            doubleClick = false;
         }
         private void b8_Click(object sender, EventArgs e)
         {
             fillInTb("8");
-
+            doubleClick = false;
         }
         private void b9_Click(object sender, EventArgs e)
         {
             fillInTb("9");
-            
+            doubleClick = false;
         }
         private void b0_Click(object sender, EventArgs e)
         {
             fillInTb("0");
-            
+            doubleClick = false;
         }
         private void bReset_Click(object sender, EventArgs e)
         {
@@ -110,20 +104,32 @@ namespace Kalkulator
             lineOfItem = null;
             typeOfFunction = 'x';
             lShowLines.Text = "";
+            listOfElements.Clear();
         }
         private void lShowLines_Click(object sender, EventArgs e)
         {
 
         }
+
         //My functions
 
-        private void whetherassignNumberStart(string number) //fixet bug like, input: +++++6 -> firstNumber is empty, secondNumber=6
+        private void  doubleClickF(char sign)
         {
+            typeOfFunction = sign;
+            Console.WriteLine("Znak : " + sign);
+            if (!doubleClick)
+            {
+                whetherassignNumberStart(tb.Text);
+                //typeOfFunction = sign;
+            }
+            doubleClick = true;
+        }
+        private void whetherassignNumberStart(string number) //fixet bug like, input: +++++6 -> firstNumber is empty, secondNumber=6
+        {                                                      //also fixed bug like 6+++ = 36
             if (tb.Text != "" && tb.Text != null)
             {
                 assignNumber(number);
-            }
-                
+            } 
         } 
 
         private void resetCalculations() // After user click = calc start working from beginign.
@@ -171,9 +177,8 @@ namespace Kalkulator
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
+            
             double result = 0;
-            /*if (firstNumber == "" || secondNumber == "") //Prevent from bug when user start with push + / - buttons several times.
-                return 0;                                //Prevent also from input 7+++ is equal 28.*/
 
             Console.WriteLine("Działa doTheMathXd");
             double firstNumberH;
@@ -183,12 +188,7 @@ namespace Kalkulator
                 return 0;
             }
             else
-            {
-                listOfElements.Add(firstNumber);
-                listOfElements.Add(secondNumber);
-                listOfElements.Add(sign.ToString());
-                //Console.WriteLine("Pierwsza liczba doTheMath: " + firstNumberH + " Druga liczba: " + secondNumberH);
-                
+            {                
                 if (sign.Equals('+'))
                     result = firstNumberH + secondNumberH;
                 else if (sign.Equals('-'))
@@ -216,7 +216,6 @@ namespace Kalkulator
                     help += listOfElements[i];
                 lShowLines.Text = help;
                 tb.Text = result.ToString();
-
                 this.firstNumber = result.ToString();
             }
             return result;
