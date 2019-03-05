@@ -25,23 +25,28 @@ namespace Kalkulator
         private void bAddition_Click(object sender, EventArgs e)
         {
             doubleClickF('+');
+            typeOfFunction = '+';
         }
         private void bSubtraction_Click(object sender, EventArgs e)
         {
             doubleClickF('-');
+            typeOfFunction = '-';
         }
         private void bMultiplication_Click(object sender, EventArgs e)
         {
             doubleClickF('*');
+            typeOfFunction = '*';
         }
 
         private void bDivision_Click(object sender, EventArgs e)
         {
             doubleClickF('/');
+            typeOfFunction = '/';
         }
         private void bEqual_Click(object sender, EventArgs e)
         {
             doubleClickF('=');
+            typeOfFunction = '=';
             resetCalculations();
         }
 
@@ -115,7 +120,7 @@ namespace Kalkulator
 
         private void  doubleClickF(char sign)
         {
-            typeOfFunction = sign;
+            //typeOfFunction = sign; tu tego być nie może bo sie psują zwykłe działania
             Console.WriteLine("Znak : " + sign);
             if (!doubleClick)
             {
@@ -134,7 +139,7 @@ namespace Kalkulator
 
         private void resetCalculations() // After user click = calc start working from beginign.
         {
-            firstNumber = null;
+            firstNumber = tb.Text;
             secondNumber = null;
             lineOfItem = null;
             typeOfFunction = 'x';
@@ -179,7 +184,6 @@ namespace Kalkulator
         {
             
             double result = 0;
-
             Console.WriteLine("Działa doTheMathXd");
             double firstNumberH;
             double secondNumberH;
