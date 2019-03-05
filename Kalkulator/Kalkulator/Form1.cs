@@ -48,6 +48,7 @@ namespace Kalkulator
             doubleClickF('=');
             typeOfFunction = '=';
             resetCalculations();
+            //fillInTb(tb.Text); //??
         }
 
         private void b1_Click(object sender, EventArgs e)
@@ -103,8 +104,8 @@ namespace Kalkulator
         private void bReset_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Działą reset.");
-            tb.Text = "";
-            firstNumber = null;
+            tb.Text = "0";
+            firstNumber = null; //Przetestować czy ta zmiana powoduje usuniecie bugu ze zmianą znaku
             secondNumber = null;
             lineOfItem = null;
             typeOfFunction = 'x';
@@ -118,6 +119,24 @@ namespace Kalkulator
 
         //My functions
 
+        private void resetCalculations() // After user click = calc start working from beginign.
+        {
+            if (firstNumber != null && secondNumber != null) //Prevent from bugs like: =->number->sign->0
+                firstNumber = tb.Text;                       //and make sure that solution afret push '=' is the fitst sign to next caluclations
+            else
+                firstNumber = null;
+            secondNumber = null;
+            lineOfItem = null;
+            typeOfFunction = 'x';
+            lShowLines.Text = "";
+            listOfElements.Clear();
+            /*firstNumber = tb.Text;
+            secondNumber = null;
+            lineOfItem = null;
+            typeOfFunction = 'x';
+            lShowLines.Text = "";
+            listOfElements.Clear();*/
+        }
         private void  doubleClickF(char sign)
         {
             //typeOfFunction = sign; tu tego być nie może bo sie psują zwykłe działania
@@ -137,15 +156,7 @@ namespace Kalkulator
             } 
         } 
 
-        private void resetCalculations() // After user click = calc start working from beginign.
-        {
-            firstNumber = tb.Text;
-            secondNumber = null;
-            lineOfItem = null;
-            typeOfFunction = 'x';
-            lShowLines.Text = "";
-            listOfElements.Clear();
-        }
+
         private void fillInTb(String sign) //It's useing to fill in text box with numbers inputed by user. 
         {
             Console.WriteLine("Działa fillInTb");
@@ -182,7 +193,8 @@ namespace Kalkulator
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
-            
+            Console.WriteLine("Do the math: " + firstNumber + "   " + secondNumber);
+
             double result = 0;
             Console.WriteLine("Działa doTheMathXd");
             double firstNumberH;
@@ -219,8 +231,10 @@ namespace Kalkulator
                 for (int i = 0; i < listOfElements.Count(); i++)
                     help += listOfElements[i];
                 lShowLines.Text = help;
-                tb.Text = result.ToString();
+                
                 this.firstNumber = result.ToString();
+                tb.Text = result.ToString();
+                Console.WriteLine("Wynik: " + result);
             }
             return result;
         }

@@ -44,7 +44,6 @@
             this.bMultiplication = new System.Windows.Forms.Button();
             this.bDivision = new System.Windows.Forms.Button();
             this.tb = new System.Windows.Forms.TextBox();
-            this.tbTest = new System.Windows.Forms.TextBox();
             this.bReset = new System.Windows.Forms.Button();
             this.lShowLines = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,7 +52,7 @@
             // 
             this.b1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.b1.Location = new System.Drawing.Point(12, 111);
+            this.b1.Location = new System.Drawing.Point(12, 358);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(70, 67);
             this.b1.TabIndex = 0;
@@ -64,7 +63,7 @@
             // b0
             // 
             this.b0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b0.Location = new System.Drawing.Point(12, 389);
+            this.b0.Location = new System.Drawing.Point(12, 445);
             this.b0.Name = "b0";
             this.b0.Size = new System.Drawing.Size(70, 67);
             this.b0.TabIndex = 1;
@@ -75,7 +74,7 @@
             // b9
             // 
             this.b9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b9.Location = new System.Drawing.Point(214, 300);
+            this.b9.Location = new System.Drawing.Point(219, 178);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(70, 67);
             this.b9.TabIndex = 2;
@@ -86,7 +85,7 @@
             // b8
             // 
             this.b8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b8.Location = new System.Drawing.Point(110, 300);
+            this.b8.Location = new System.Drawing.Point(114, 178);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(70, 67);
             this.b8.TabIndex = 3;
@@ -97,7 +96,7 @@
             // b7
             // 
             this.b7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b7.Location = new System.Drawing.Point(12, 300);
+            this.b7.Location = new System.Drawing.Point(12, 178);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(70, 67);
             this.b7.TabIndex = 4;
@@ -108,7 +107,7 @@
             // b6
             // 
             this.b6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b6.Location = new System.Drawing.Point(214, 211);
+            this.b6.Location = new System.Drawing.Point(219, 267);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(70, 67);
             this.b6.TabIndex = 5;
@@ -119,7 +118,7 @@
             // b5
             // 
             this.b5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b5.Location = new System.Drawing.Point(110, 211);
+            this.b5.Location = new System.Drawing.Point(114, 267);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(70, 67);
             this.b5.TabIndex = 6;
@@ -130,7 +129,7 @@
             // b4
             // 
             this.b4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b4.Location = new System.Drawing.Point(12, 211);
+            this.b4.Location = new System.Drawing.Point(12, 267);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(70, 67);
             this.b4.TabIndex = 7;
@@ -141,7 +140,7 @@
             // b3
             // 
             this.b3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b3.Location = new System.Drawing.Point(214, 111);
+            this.b3.Location = new System.Drawing.Point(219, 358);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(70, 67);
             this.b3.TabIndex = 8;
@@ -152,7 +151,7 @@
             // b2
             // 
             this.b2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.b2.Location = new System.Drawing.Point(110, 111);
+            this.b2.Location = new System.Drawing.Point(114, 358);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(70, 67);
             this.b2.TabIndex = 9;
@@ -164,7 +163,7 @@
             // 
             this.bEqual.BackColor = System.Drawing.SystemColors.Info;
             this.bEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bEqual.Location = new System.Drawing.Point(110, 389);
+            this.bEqual.Location = new System.Drawing.Point(219, 445);
             this.bEqual.Name = "bEqual";
             this.bEqual.Size = new System.Drawing.Size(70, 67);
             this.bEqual.TabIndex = 10;
@@ -176,7 +175,7 @@
             // 
             this.bAddition.BackColor = System.Drawing.SystemColors.Info;
             this.bAddition.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bAddition.Location = new System.Drawing.Point(315, 211);
+            this.bAddition.Location = new System.Drawing.Point(311, 445);
             this.bAddition.Name = "bAddition";
             this.bAddition.Size = new System.Drawing.Size(70, 67);
             this.bAddition.TabIndex = 11;
@@ -188,7 +187,7 @@
             // 
             this.bSubtraction.BackColor = System.Drawing.SystemColors.Info;
             this.bSubtraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bSubtraction.Location = new System.Drawing.Point(315, 300);
+            this.bSubtraction.Location = new System.Drawing.Point(311, 358);
             this.bSubtraction.Name = "bSubtraction";
             this.bSubtraction.Size = new System.Drawing.Size(70, 67);
             this.bSubtraction.TabIndex = 12;
@@ -200,7 +199,7 @@
             // 
             this.bMultiplication.BackColor = System.Drawing.SystemColors.Info;
             this.bMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bMultiplication.Location = new System.Drawing.Point(315, 389);
+            this.bMultiplication.Location = new System.Drawing.Point(311, 267);
             this.bMultiplication.Name = "bMultiplication";
             this.bMultiplication.Size = new System.Drawing.Size(70, 67);
             this.bMultiplication.TabIndex = 13;
@@ -212,7 +211,7 @@
             // 
             this.bDivision.BackColor = System.Drawing.SystemColors.Info;
             this.bDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bDivision.Location = new System.Drawing.Point(214, 389);
+            this.bDivision.Location = new System.Drawing.Point(311, 178);
             this.bDivision.Name = "bDivision";
             this.bDivision.Size = new System.Drawing.Size(70, 67);
             this.bDivision.TabIndex = 14;
@@ -224,27 +223,19 @@
             // 
             this.tb.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb.Enabled = false;
-            this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tb.Location = new System.Drawing.Point(12, 12);
             this.tb.Multiline = true;
             this.tb.Name = "tb";
             this.tb.ReadOnly = true;
-            this.tb.Size = new System.Drawing.Size(371, 48);
+            this.tb.Size = new System.Drawing.Size(371, 67);
             this.tb.TabIndex = 15;
             this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
-            // 
-            // tbTest
-            // 
-            this.tbTest.Location = new System.Drawing.Point(12, 462);
-            this.tbTest.Name = "tbTest";
-            this.tbTest.Size = new System.Drawing.Size(197, 22);
-            this.tbTest.TabIndex = 16;
-            this.tbTest.TextChanged += new System.EventHandler(this.tbTest_TextChanged);
             // 
             // bReset
             // 
             this.bReset.BackColor = System.Drawing.SystemColors.Info;
-            this.bReset.Location = new System.Drawing.Point(315, 111);
+            this.bReset.Location = new System.Drawing.Point(12, 89);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(70, 67);
             this.bReset.TabIndex = 17;
@@ -265,10 +256,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 500);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(393, 524);
             this.Controls.Add(this.lShowLines);
             this.Controls.Add(this.bReset);
-            this.Controls.Add(this.tbTest);
             this.Controls.Add(this.tb);
             this.Controls.Add(this.bDivision);
             this.Controls.Add(this.bMultiplication);
@@ -313,7 +304,6 @@
         private System.Windows.Forms.Button bMultiplication;
         private System.Windows.Forms.Button bDivision;
         private System.Windows.Forms.TextBox tb;
-        private System.Windows.Forms.TextBox tbTest;
         private System.Windows.Forms.Button bReset;
         private System.Windows.Forms.Label lShowLines;
     }
