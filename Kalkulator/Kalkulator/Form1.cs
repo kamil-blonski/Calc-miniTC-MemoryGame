@@ -101,6 +101,12 @@ namespace Kalkulator
             fillInTb("0");
             doubleClick = false;
         }
+        private void b_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            fillInTb(button.Text);
+            doubleClick = false;
+        }
         private void bReset_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Działą reset.");

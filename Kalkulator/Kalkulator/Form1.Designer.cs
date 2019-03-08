@@ -69,7 +69,7 @@
             this.b0.TabIndex = 1;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = true;
-            this.b0.Click += new System.EventHandler(this.b0_Click);
+            this.b0.Click += new System.EventHandler(this.b_Click);
             // 
             // b9
             // 
