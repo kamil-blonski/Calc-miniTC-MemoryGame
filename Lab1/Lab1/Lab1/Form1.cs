@@ -76,7 +76,7 @@ namespace Lab1
 
         void saveData()
         {
-            Console.WriteLine("ZAPISUJE");
+            //Console.WriteLine("ZAPISUJE");
             System.IO.StreamWriter saveData = new System.IO.StreamWriter("data.txt");
             foreach(var element in listBox.Items)
             {
@@ -126,6 +126,7 @@ namespace Lab1
         private void num_KeyPress(object sender, KeyPressEventArgs e)
         {
             p_dodaj_Click(sender, e);
+            this.ActiveControl = tb_name;
         }
 
 
