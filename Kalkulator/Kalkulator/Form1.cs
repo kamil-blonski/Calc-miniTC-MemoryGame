@@ -21,136 +21,61 @@ namespace Kalkulator
         {
             InitializeComponent();
         }
-
-        private void bAddition_Click(object sender, EventArgs e)
-        {
-            doubleClickF('+');
-            typeOfFunction = '+';
-        }
-        private void bSubtraction_Click(object sender, EventArgs e)
-        {
-            doubleClickF('-');
-            typeOfFunction = '-';
-        }
-        private void bMultiplication_Click(object sender, EventArgs e)
-        {
-            doubleClickF('*');
-            typeOfFunction = '*';
-        }
-
-        private void bDivision_Click(object sender, EventArgs e)
-        {
-            doubleClickF('/');
-            typeOfFunction = '/';
-        }
-        private void bEqual_Click(object sender, EventArgs e)
-        {
-            doubleClickF('=');
-            typeOfFunction = '=';
-            resetCalculations();
-            //fillInTb(tb.Text); //??
-        }
-
-        private void b1_Click(object sender, EventArgs e)
-        {
-            fillInTb("1");
-            doubleClick = false;
-        }
-        private void b2_Click(object sender, EventArgs e)
-        {
-            fillInTb("2");
-            doubleClick = false;
-        }
-        private void b3_Click(object sender, EventArgs e)
-        {
-            fillInTb("3");
-            doubleClick = false;
-        }
-        private void b4_Click(object sender, EventArgs e)
-        {
-            fillInTb("4");
-            doubleClick = false;
-        }
-        private void b5_Click(object sender, EventArgs e)
-        {
-            fillInTb("5");
-            doubleClick = false;
-        }
-        private void b6_Click(object sender, EventArgs e)
-        {
-            fillInTb("6");
-            doubleClick = false;
-        }
-        private void b7_Click(object sender, EventArgs e)
-        {
-            fillInTb("7");
-            doubleClick = false;
-        }
-        private void b8_Click(object sender, EventArgs e)
-        {
-            fillInTb("8");
-            doubleClick = false;
-        }
-        private void b9_Click(object sender, EventArgs e)
-        {
-            fillInTb("9");
-            doubleClick = false;
-        }
-        private void b0_Click(object sender, EventArgs e)
-        {
-            fillInTb("0");
-            doubleClick = false;
-        }
-        private void b_Click(object sender, EventArgs e)
+        private void b_ClickNotNumbers(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            fillInTb(button.Text);
-            doubleClick = false;
+            doubleClickF(char.Parse(button.Text));
+            typeOfFunction = char.Parse(button.Text);
+        }
+   
+        private void b_Click(object sender, EventArgs e)
+        {
+            tb.Font = new Font("Serif", 28);
+            Button button = (Button)sender;
+            if (!(tb.Text == "0" && button.Text == "0"))
+            {
+                fillInTb(button.Text);
+                doubleClick = false;
+            }
         }
         private void bReset_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Działą reset.");
+            tb.Font = new Font("Serif", 28);
             tb.Text = "0";
-            firstNumber = null; //Przetestować czy ta zmiana powoduje usuniecie bugu ze zmianą znaku
+            firstNumber = null; //Delate bug with sign change
             secondNumber = null;
             lineOfItem = null;
             typeOfFunction = 'x';
             lShowLines.Text = "";
             listOfElements.Clear();
         }
-        private void lShowLines_Click(object sender, EventArgs e)
-        {
 
-        }
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@ My functions
 
-        //My functions
-
-        private void resetCalculations() // After user click = calc start working from beginign.
-        {
-            if (firstNumber != null && secondNumber != null) //Prevent from bugs like: =->number->sign->0
-                firstNumber = tb.Text;                       //and make sure that solution afret push '=' is the fitst sign to next caluclations
-            else
-                firstNumber = null;
-            secondNumber = null;
-            lineOfItem = null;
-            typeOfFunction = 'x';
-            lShowLines.Text = "";
-            listOfElements.Clear();
-            /*firstNumber = tb.Text;
-            secondNumber = null;
-            lineOfItem = null;
-            typeOfFunction = 'x';
-            lShowLines.Text = "";
-            listOfElements.Clear();*/
-        }
+        //private void resetCalculations() // After user click = calc start working from beginign.
+        //{
+        //    if (firstNumber != null && secondNumber != null) //Prevent from bugs like: =->number->sign->0
+        //        firstNumber = tb.Text;                       //and make sure that solution afret push '=' is the fitst sign to next caluclations
+        //    else
+        //        firstNumber = null;
+        //    secondNumber = null;
+        //    lineOfItem = null;
+        //    typeOfFunction = 'x';
+        //    lShowLines.Text = "";
+        //    listOfElements.Clear();
+        //    /*firstNumber = tb.Text;
+        //    secondNumber = null;
+        //    lineOfItem = null;
+        //    typeOfFunction = 'x';
+        //    lShowLines.Text = "";
+        //    listOfElements.Clear();*/
+        //}
         private void  doubleClickF(char sign)
         {
-            //typeOfFunction = sign; tu tego być nie może bo sie psują zwykłe działania
-            Console.WriteLine("Znak : " + sign);
+            //typeOfFunction = sign; //this instruction right there is spoil calculations
             if (!doubleClick)
             {
                 whetherassignNumberStart(tb.Text);
-                //typeOfFunction = sign;
             }
             doubleClick = true;
         }
@@ -161,23 +86,15 @@ namespace Kalkulator
                 assignNumber(number);
             } 
         } 
-
-
+        
         private void fillInTb(String sign) //It's useing to fill in text box with numbers inputed by user. 
         {
-            Console.WriteLine("Działa fillInTb");
             lineOfItem += sign;
             tb.Text = lineOfItem;
         }
 
-        private void tbTest_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void assignNumber(String line) //Function decide which number is inputed.
         {
-            Console.WriteLine("Działa assignNumber.");
             lineOfItem = null;
             if(firstNumber == null)
             {
@@ -189,20 +106,29 @@ namespace Kalkulator
                 if (secondNumber != null)
                     doTheMathXd(firstNumber, secondNumber, typeOfFunction);
             }
-            Console.WriteLine("Pierwsza liczba assign: " + firstNumber + " Druga liczba: " + secondNumber);
         }
 
-        private void tb_TextChanged(object sender, EventArgs e)
+        private void bPoint_Click(object sender, EventArgs e)
         {
-
+            tb.Font = new Font("Serif", 28);
+            if (tb.Text.Contains(","))
+                return;
+            if (tb.Text.Equals("") || lineOfItem == null)
+            {
+                fillInTb("0" + bPoint.Text);
+                doubleClick = false;
+                return;
+            }
+            else
+            {
+                fillInTb(bPoint.Text);
+                doubleClick = false;
+            }
         }
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
-            Console.WriteLine("Do the math: " + firstNumber + "   " + secondNumber);
-
             double result = 0;
-            Console.WriteLine("Działa doTheMathXd");
             double firstNumberH;
             double secondNumberH;
             if (!(Double.TryParse(firstNumber, out firstNumberH) && Double.TryParse(secondNumber, out secondNumberH))) //Prevent from wrong input like: 2/0=komunikat+2=bug.
@@ -222,7 +148,7 @@ namespace Kalkulator
                     if (secondNumberH == 0)
                     {
                         bReset_Click(new object(), new EventArgs());
-                        Console.WriteLine("Przez 0");
+                        tb.Font = new Font("Serif", 16);
                         tb.Text = "Nie można dzielić przez 0!";
                         return 0;
                     }
@@ -240,7 +166,6 @@ namespace Kalkulator
                 
                 this.firstNumber = result.ToString();
                 tb.Text = result.ToString();
-                Console.WriteLine("Wynik: " + result);
             }
             return result;
         }

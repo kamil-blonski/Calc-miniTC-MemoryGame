@@ -46,6 +46,7 @@
             this.tb = new System.Windows.Forms.TextBox();
             this.bReset = new System.Windows.Forms.Button();
             this.lShowLines = new System.Windows.Forms.Label();
+            this.bPoint = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // b1
@@ -55,10 +56,10 @@
             this.b1.Location = new System.Drawing.Point(12, 358);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(70, 67);
-            this.b1.TabIndex = 0;
+            this.b1.TabIndex = 2;
             this.b1.Text = "1";
             this.b1.UseVisualStyleBackColor = true;
-            this.b1.Click += new System.EventHandler(this.b1_Click);
+            this.b1.Click += new System.EventHandler(this.b_Click);
             // 
             // b0
             // 
@@ -77,10 +78,10 @@
             this.b9.Location = new System.Drawing.Point(219, 178);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(70, 67);
-            this.b9.TabIndex = 2;
+            this.b9.TabIndex = 10;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = true;
-            this.b9.Click += new System.EventHandler(this.b9_Click);
+            this.b9.Click += new System.EventHandler(this.b_Click);
             // 
             // b8
             // 
@@ -88,10 +89,10 @@
             this.b8.Location = new System.Drawing.Point(114, 178);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(70, 67);
-            this.b8.TabIndex = 3;
+            this.b8.TabIndex = 9;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = true;
-            this.b8.Click += new System.EventHandler(this.b8_Click);
+            this.b8.Click += new System.EventHandler(this.b_Click);
             // 
             // b7
             // 
@@ -99,10 +100,10 @@
             this.b7.Location = new System.Drawing.Point(12, 178);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(70, 67);
-            this.b7.TabIndex = 4;
+            this.b7.TabIndex = 8;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = true;
-            this.b7.Click += new System.EventHandler(this.b7_Click);
+            this.b7.Click += new System.EventHandler(this.b_Click);
             // 
             // b6
             // 
@@ -110,10 +111,10 @@
             this.b6.Location = new System.Drawing.Point(219, 267);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(70, 67);
-            this.b6.TabIndex = 5;
+            this.b6.TabIndex = 7;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = true;
-            this.b6.Click += new System.EventHandler(this.b6_Click);
+            this.b6.Click += new System.EventHandler(this.b_Click);
             // 
             // b5
             // 
@@ -124,7 +125,7 @@
             this.b5.TabIndex = 6;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = true;
-            this.b5.Click += new System.EventHandler(this.b5_Click);
+            this.b5.Click += new System.EventHandler(this.b_Click);
             // 
             // b4
             // 
@@ -132,10 +133,10 @@
             this.b4.Location = new System.Drawing.Point(12, 267);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(70, 67);
-            this.b4.TabIndex = 7;
+            this.b4.TabIndex = 5;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = true;
-            this.b4.Click += new System.EventHandler(this.b4_Click);
+            this.b4.Click += new System.EventHandler(this.b_Click);
             // 
             // b3
             // 
@@ -143,10 +144,10 @@
             this.b3.Location = new System.Drawing.Point(219, 358);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(70, 67);
-            this.b3.TabIndex = 8;
+            this.b3.TabIndex = 4;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = true;
-            this.b3.Click += new System.EventHandler(this.b3_Click);
+            this.b3.Click += new System.EventHandler(this.b_Click);
             // 
             // b2
             // 
@@ -154,10 +155,10 @@
             this.b2.Location = new System.Drawing.Point(114, 358);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(70, 67);
-            this.b2.TabIndex = 9;
+            this.b2.TabIndex = 3;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = true;
-            this.b2.Click += new System.EventHandler(this.b2_Click);
+            this.b2.Click += new System.EventHandler(this.b_Click);
             // 
             // bEqual
             // 
@@ -166,10 +167,10 @@
             this.bEqual.Location = new System.Drawing.Point(219, 445);
             this.bEqual.Name = "bEqual";
             this.bEqual.Size = new System.Drawing.Size(70, 67);
-            this.bEqual.TabIndex = 10;
+            this.bEqual.TabIndex = 16;
             this.bEqual.Text = "=";
             this.bEqual.UseVisualStyleBackColor = false;
-            this.bEqual.Click += new System.EventHandler(this.bEqual_Click);
+            this.bEqual.Click += new System.EventHandler(this.b_ClickNotNumbers);
             // 
             // bAddition
             // 
@@ -178,10 +179,10 @@
             this.bAddition.Location = new System.Drawing.Point(311, 445);
             this.bAddition.Name = "bAddition";
             this.bAddition.Size = new System.Drawing.Size(70, 67);
-            this.bAddition.TabIndex = 11;
+            this.bAddition.TabIndex = 15;
             this.bAddition.Text = "+";
             this.bAddition.UseVisualStyleBackColor = false;
-            this.bAddition.Click += new System.EventHandler(this.bAddition_Click);
+            this.bAddition.Click += new System.EventHandler(this.b_ClickNotNumbers);
             // 
             // bSubtraction
             // 
@@ -190,10 +191,10 @@
             this.bSubtraction.Location = new System.Drawing.Point(311, 358);
             this.bSubtraction.Name = "bSubtraction";
             this.bSubtraction.Size = new System.Drawing.Size(70, 67);
-            this.bSubtraction.TabIndex = 12;
+            this.bSubtraction.TabIndex = 14;
             this.bSubtraction.Text = "-";
             this.bSubtraction.UseVisualStyleBackColor = false;
-            this.bSubtraction.Click += new System.EventHandler(this.bSubtraction_Click);
+            this.bSubtraction.Click += new System.EventHandler(this.b_ClickNotNumbers);
             // 
             // bMultiplication
             // 
@@ -205,7 +206,7 @@
             this.bMultiplication.TabIndex = 13;
             this.bMultiplication.Text = "*";
             this.bMultiplication.UseVisualStyleBackColor = false;
-            this.bMultiplication.Click += new System.EventHandler(this.bMultiplication_Click);
+            this.bMultiplication.Click += new System.EventHandler(this.b_ClickNotNumbers);
             // 
             // bDivision
             // 
@@ -214,23 +215,22 @@
             this.bDivision.Location = new System.Drawing.Point(311, 178);
             this.bDivision.Name = "bDivision";
             this.bDivision.Size = new System.Drawing.Size(70, 67);
-            this.bDivision.TabIndex = 14;
+            this.bDivision.TabIndex = 12;
             this.bDivision.Text = "/";
             this.bDivision.UseVisualStyleBackColor = false;
-            this.bDivision.Click += new System.EventHandler(this.bDivision_Click);
+            this.bDivision.Click += new System.EventHandler(this.b_ClickNotNumbers);
             // 
             // tb
             // 
             this.tb.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb.Enabled = false;
-            this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb.Font = new System.Drawing.Font("Mathematica7", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tb.Location = new System.Drawing.Point(12, 12);
             this.tb.Multiline = true;
             this.tb.Name = "tb";
             this.tb.ReadOnly = true;
             this.tb.Size = new System.Drawing.Size(371, 67);
             this.tb.TabIndex = 15;
-            this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
             // 
             // bReset
             // 
@@ -238,7 +238,7 @@
             this.bReset.Location = new System.Drawing.Point(12, 89);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(70, 67);
-            this.bReset.TabIndex = 17;
+            this.bReset.TabIndex = 0;
             this.bReset.Text = "C\\CE";
             this.bReset.UseVisualStyleBackColor = false;
             this.bReset.Click += new System.EventHandler(this.bReset_Click);
@@ -250,7 +250,18 @@
             this.lShowLines.Name = "lShowLines";
             this.lShowLines.Size = new System.Drawing.Size(0, 17);
             this.lShowLines.TabIndex = 18;
-            this.lShowLines.Click += new System.EventHandler(this.lShowLines_Click);
+            // 
+            // bPoint
+            // 
+            this.bPoint.BackColor = System.Drawing.SystemColors.Info;
+            this.bPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bPoint.Location = new System.Drawing.Point(114, 445);
+            this.bPoint.Name = "bPoint";
+            this.bPoint.Size = new System.Drawing.Size(70, 67);
+            this.bPoint.TabIndex = 11;
+            this.bPoint.Text = ",";
+            this.bPoint.UseVisualStyleBackColor = false;
+            this.bPoint.Click += new System.EventHandler(this.bPoint_Click);
             // 
             // Form1
             // 
@@ -258,6 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(393, 524);
+            this.Controls.Add(this.bPoint);
             this.Controls.Add(this.lShowLines);
             this.Controls.Add(this.bReset);
             this.Controls.Add(this.tb);
@@ -306,6 +318,7 @@
         private System.Windows.Forms.TextBox tb;
         private System.Windows.Forms.Button bReset;
         private System.Windows.Forms.Label lShowLines;
+        private System.Windows.Forms.Button bPoint;
     }
 }
 
