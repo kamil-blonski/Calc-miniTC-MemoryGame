@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Kalkulator
@@ -13,10 +9,11 @@ namespace Kalkulator
     public partial class Form1 : Form
     {
         private  char typeOfFunction;
-        private String firstNumber, secondNumber;
-        private String lineOfItem;
+        private double result = 0;
+        private string firstNumber, secondNumber;
+        private string lineOfItem; //textbox value
         Boolean doubleClick = false; //Prevent from wrong output for input 4+++ = 16
-        List<String> listOfElements = new List<String>();
+        List<String> listOfElements = new List<String>(); //label value
         public Form1()
         {
             InitializeComponent();
@@ -24,20 +21,90 @@ namespace Kalkulator
         private void b_ClickNotNumbers(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+            if (tb.Text == "Nie można dzielić przez 0!")
+                return;
             doubleClickF(char.Parse(button.Text));
             typeOfFunction = char.Parse(button.Text);
+            if (button.Text == "=")
+            {
+                listOfElements.Clear();
+                /*string tmp = result.ToString();
+                for(int i = 0; i < result.ToString().Length; i++)
+                {
+                    listOfElements.Add(tmp[i].ToString());
+                }*/
+                if (secondNumber != null)
+                {
+                    string tmp = result.ToString();
+                    for(int i = 0; i < result.ToString().Length; i++)
+                    {
+                        listOfElements.Add(tmp[i].ToString());
+                    }
+                    //listOfElements.Add(result.ToString());
+                    lInput.Text = result.ToString();
+                }
+                else
+                {
+                    lInput.Text = "";
+                }
+
+                return;
+            }
+
+            if(listOfElements.Count > 0)
+            {
+                if (listOfElements[listOfElements.Count - 1] == "+" || listOfElements[listOfElements.Count - 1] == "-"
+                || listOfElements[listOfElements.Count - 1] == "/" || listOfElements[listOfElements.Count - 1] == "*")
+                {
+                    listOfElements.RemoveAt(listOfElements.Count - 1);
+                    listOfElements.Add(button.Text);
+                }
+                else
+                {
+                    listOfElements.Add(button.Text);
+                }
+            }
+
+            showInput();
         }
    
         private void b_Click(object sender, EventArgs e)
         {
             tb.Font = new Font("Serif", 28);
             Button button = (Button)sender;
+            if(typeOfFunction == '=')
+            {
+                listOfElements.Clear();
+                lInput.Text = "";
+                bReset_Click(sender, e);
+            }
+
+
             if (!(tb.Text == "0" && button.Text == "0"))
             {
-                fillInTb(button.Text);
-                doubleClick = false;
+                if (tb.Text.Length < 12)
+                {
+                    listOfElements.Add(button.Text);
+                    showInput();
+                    fillInTb(button.Text);
+                    doubleClick = false;
+                 }
+                if (listOfElements.Count > 0)
+                {
+                    if (/*tb.Text.Length == 12 &&*/
+                    (listOfElements[listOfElements.Count - 1] == "+" || listOfElements[listOfElements.Count - 1] == "-" ||
+                    listOfElements[listOfElements.Count - 1] == "*" || listOfElements[listOfElements.Count - 1] == "/"))
+                    {
+                        listOfElements.Add(button.Text);
+                        showInput();
+                        fillInTb(button.Text);
+                        doubleClick = false;
+                    }
+                }
             }
         }
+
+        
         private void bReset_Click(object sender, EventArgs e)
         {
             tb.Font = new Font("Serif", 28);
@@ -46,11 +113,11 @@ namespace Kalkulator
             secondNumber = null;
             lineOfItem = null;
             typeOfFunction = 'x';
-            lShowLines.Text = "";
+            lInput.Text = "";
             listOfElements.Clear();
         }
 
-        //@@@@@@@@@@@@@@@@@@@@@@@@@@ My functions
+
 
         //private void resetCalculations() // After user click = calc start working from beginign.
         //{
@@ -111,11 +178,21 @@ namespace Kalkulator
         private void bPoint_Click(object sender, EventArgs e)
         {
             tb.Font = new Font("Serif", 28);
+            if (firstNumber != null && (typeOfFunction == '+'))
+            {
+                fillInTb("0,");
+                listOfElements.Add("0,");
+                doubleClick = false;
+                showInput();
+            }
+
             if (tb.Text.Contains(","))
                 return;
             if (tb.Text.Equals("") || lineOfItem == null)
             {
                 fillInTb("0" + bPoint.Text);
+                listOfElements.Add("0" + bPoint.Text);
+                showInput();
                 doubleClick = false;
                 return;
             }
@@ -123,16 +200,24 @@ namespace Kalkulator
             {
                 fillInTb(bPoint.Text);
                 doubleClick = false;
+                listOfElements.Add(",");
+                showInput();
             }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
-            double result = 0;
             double firstNumberH;
             double secondNumberH;
             if (!(Double.TryParse(firstNumber, out firstNumberH) && Double.TryParse(secondNumber, out secondNumberH))) //Prevent from wrong input like: 2/0=komunikat+2=bug.
             {
+                bReset_Click(new object(), new EventArgs());
                 return 0;
             }
             else
@@ -150,6 +235,8 @@ namespace Kalkulator
                         bReset_Click(new object(), new EventArgs());
                         tb.Font = new Font("Serif", 16);
                         tb.Text = "Nie można dzielić przez 0!";
+                        result = 0;
+                        listOfElements.Clear();
                         return 0;
                     }
                     else
@@ -159,15 +246,33 @@ namespace Kalkulator
                 {
                     return 0;
                 }
-                String help = "";
-                for (int i = 0; i < listOfElements.Count(); i++)
-                    help += listOfElements[i];
-                lShowLines.Text = help;
-                
+                //String help = "";
+                //for (int i = 0; i < listOfElements.Count(); i++)
+                //    help += listOfElements[i];
+                //lInput.Text = help;
+                Console.WriteLine("lista");
                 this.firstNumber = result.ToString();
                 tb.Text = result.ToString();
             }
             return result;
+        }
+
+        private void showInput()
+        {
+            lInput.Text = "";
+            if(listOfElements.Count > 40)
+            {
+                for(int i = 1; i < listOfElements.Count; i++)
+                {
+                    listOfElements[i-1] = listOfElements[i];
+                }
+                listOfElements.RemoveAt(listOfElements.Count - 1);
+            }
+            for (int i = 0; i < listOfElements.Count; i++)
+            {
+                lInput.Text += (listOfElements[i]);
+            }
+
         }
     }
 }
