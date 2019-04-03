@@ -52,6 +52,7 @@
             // 
             // b1
             // 
+            this.b1.Cursor = System.Windows.Forms.Cursors.Default;
             this.b1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.b1.Location = new System.Drawing.Point(75, 397);
@@ -64,6 +65,7 @@
             // 
             // b0
             // 
+            this.b0.Cursor = System.Windows.Forms.Cursors.Default;
             this.b0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b0.Location = new System.Drawing.Point(75, 484);
             this.b0.Name = "b0";
@@ -75,6 +77,7 @@
             // 
             // b9
             // 
+            this.b9.Cursor = System.Windows.Forms.Cursors.Default;
             this.b9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b9.Location = new System.Drawing.Point(282, 217);
             this.b9.Name = "b9";
@@ -86,6 +89,7 @@
             // 
             // b8
             // 
+            this.b8.Cursor = System.Windows.Forms.Cursors.Default;
             this.b8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b8.Location = new System.Drawing.Point(177, 217);
             this.b8.Name = "b8";
@@ -97,6 +101,7 @@
             // 
             // b7
             // 
+            this.b7.Cursor = System.Windows.Forms.Cursors.Default;
             this.b7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b7.Location = new System.Drawing.Point(75, 217);
             this.b7.Name = "b7";
@@ -108,6 +113,7 @@
             // 
             // b6
             // 
+            this.b6.Cursor = System.Windows.Forms.Cursors.Default;
             this.b6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b6.Location = new System.Drawing.Point(282, 306);
             this.b6.Name = "b6";
@@ -119,6 +125,7 @@
             // 
             // b5
             // 
+            this.b5.Cursor = System.Windows.Forms.Cursors.Default;
             this.b5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b5.Location = new System.Drawing.Point(177, 306);
             this.b5.Name = "b5";
@@ -130,6 +137,7 @@
             // 
             // b4
             // 
+            this.b4.Cursor = System.Windows.Forms.Cursors.Default;
             this.b4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b4.Location = new System.Drawing.Point(75, 306);
             this.b4.Name = "b4";
@@ -141,6 +149,7 @@
             // 
             // b3
             // 
+            this.b3.Cursor = System.Windows.Forms.Cursors.Default;
             this.b3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b3.Location = new System.Drawing.Point(282, 397);
             this.b3.Name = "b3";
@@ -152,6 +161,7 @@
             // 
             // b2
             // 
+            this.b2.Cursor = System.Windows.Forms.Cursors.Default;
             this.b2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b2.Location = new System.Drawing.Point(177, 397);
             this.b2.Name = "b2";
@@ -164,6 +174,7 @@
             // bEqual
             // 
             this.bEqual.BackColor = System.Drawing.SystemColors.Info;
+            this.bEqual.Cursor = System.Windows.Forms.Cursors.Default;
             this.bEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bEqual.Location = new System.Drawing.Point(282, 484);
             this.bEqual.Name = "bEqual";
@@ -176,6 +187,7 @@
             // bAddition
             // 
             this.bAddition.BackColor = System.Drawing.SystemColors.Info;
+            this.bAddition.Cursor = System.Windows.Forms.Cursors.Default;
             this.bAddition.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bAddition.Location = new System.Drawing.Point(374, 484);
             this.bAddition.Name = "bAddition";
@@ -188,6 +200,7 @@
             // bSubtraction
             // 
             this.bSubtraction.BackColor = System.Drawing.SystemColors.Info;
+            this.bSubtraction.Cursor = System.Windows.Forms.Cursors.Default;
             this.bSubtraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bSubtraction.Location = new System.Drawing.Point(374, 397);
             this.bSubtraction.Name = "bSubtraction";
@@ -200,6 +213,7 @@
             // bMultiplication
             // 
             this.bMultiplication.BackColor = System.Drawing.SystemColors.Info;
+            this.bMultiplication.Cursor = System.Windows.Forms.Cursors.Default;
             this.bMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bMultiplication.Location = new System.Drawing.Point(374, 306);
             this.bMultiplication.Name = "bMultiplication";
@@ -212,6 +226,7 @@
             // bDivision
             // 
             this.bDivision.BackColor = System.Drawing.SystemColors.Info;
+            this.bDivision.Cursor = System.Windows.Forms.Cursors.Default;
             this.bDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bDivision.Location = new System.Drawing.Point(374, 217);
             this.bDivision.Name = "bDivision";
@@ -234,10 +249,12 @@
             this.tb.Size = new System.Drawing.Size(496, 67);
             this.tb.TabIndex = 15;
             this.tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb.UseWaitCursor = true;
             // 
             // bReset
             // 
             this.bReset.BackColor = System.Drawing.SystemColors.Info;
+            this.bReset.Cursor = System.Windows.Forms.Cursors.Default;
             this.bReset.Location = new System.Drawing.Point(75, 128);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(70, 67);
@@ -253,10 +270,12 @@
             this.lShowLines.Name = "lShowLines";
             this.lShowLines.Size = new System.Drawing.Size(0, 17);
             this.lShowLines.TabIndex = 18;
+            this.lShowLines.UseWaitCursor = true;
             // 
             // bPoint
             // 
             this.bPoint.BackColor = System.Drawing.SystemColors.Info;
+            this.bPoint.Cursor = System.Windows.Forms.Cursors.Default;
             this.bPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bPoint.Location = new System.Drawing.Point(177, 484);
             this.bPoint.Name = "bPoint";
@@ -277,6 +296,7 @@
             this.lInput.Size = new System.Drawing.Size(370, 19);
             this.lInput.TabIndex = 19;
             this.lInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lInput.UseWaitCursor = true;
             // 
             // Form1
             // 
@@ -304,6 +324,7 @@
             this.Controls.Add(this.b9);
             this.Controls.Add(this.b0);
             this.Controls.Add(this.b1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

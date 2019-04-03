@@ -17,12 +17,19 @@ namespace Kalkulator
         public Form1()
         {
             InitializeComponent();
+            
         }
         private void b_ClickNotNumbers(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            if (tb.Text == "Nie można dzielić przez 0!")
+            if (tb.Text == "Nie można dzielić przez 0!" /*|| tb.Text == "Zbyt duża wartość!"*/)
+            {
+                //bReset_Click(sender, e);
+                //firstNumber = null;
+                //secondNumber = null;
+                //result = 0;
                 return;
+            }
             doubleClickF(char.Parse(button.Text));
             typeOfFunction = char.Parse(button.Text);
             if (button.Text == "=")
@@ -45,7 +52,8 @@ namespace Kalkulator
                 }
                 else
                 {
-                    lInput.Text = "";
+                    listOfElements.Add(firstNumber);
+                    lInput.Text = firstNumber;
                 }
 
                 return;
@@ -53,8 +61,8 @@ namespace Kalkulator
 
             if(listOfElements.Count > 0)
             {
-                if (listOfElements[listOfElements.Count - 1] == "+" || listOfElements[listOfElements.Count - 1] == "-"
-                || listOfElements[listOfElements.Count - 1] == "/" || listOfElements[listOfElements.Count - 1] == "*")
+                if ((listOfElements[listOfElements.Count - 1] == "+" || listOfElements[listOfElements.Count - 1] == "-"
+                || listOfElements[listOfElements.Count - 1] == "/" || listOfElements[listOfElements.Count - 1] == "*"))
                 {
                     listOfElements.RemoveAt(listOfElements.Count - 1);
                     listOfElements.Add(button.Text);
@@ -64,7 +72,6 @@ namespace Kalkulator
                     listOfElements.Add(button.Text);
                 }
             }
-
             showInput();
         }
    
@@ -72,10 +79,13 @@ namespace Kalkulator
         {
             tb.Font = new Font("Serif", 28);
             Button button = (Button)sender;
+            if (tb.Text == "Nie można dzielić przez 0!")
+                tb.Text = button.ToString();
             if(typeOfFunction == '=')
             {
-                listOfElements.Clear();
-                lInput.Text = "";
+                //listOfElements.Clear();
+                lInput.Text = tb.Text;
+                Console.WriteLine("XDDD");
                 bReset_Click(sender, e);
             }
 
@@ -213,6 +223,7 @@ namespace Kalkulator
 
         private double doTheMathXd (String firstNumber, String secondNumber, char sign)
         {
+
             double firstNumberH;
             double secondNumberH;
             if (!(Double.TryParse(firstNumber, out firstNumberH) && Double.TryParse(secondNumber, out secondNumberH))) //Prevent from wrong input like: 2/0=komunikat+2=bug.
@@ -254,7 +265,18 @@ namespace Kalkulator
                 this.firstNumber = result.ToString();
                 tb.Text = result.ToString();
             }
-            return result;
+            if (result > double.MaxValue)
+            {
+                bReset_Click(new object(), new EventArgs());
+                tb.Font = new Font("Serif", 16);
+                tb.Text = "Zbyt duża wartość!";
+                result = 0;
+                listOfElements.Clear();
+
+                return 0;
+            }
+            else
+                return result;
         }
 
         private void showInput()
