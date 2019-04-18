@@ -81,6 +81,7 @@ namespace Kalkulator
             Button button = (Button)sender;
             if (tb.Text == "Nie można dzielić przez 0!")
                 tb.Text = button.ToString();
+
             if(typeOfFunction == '=')
             {
                 //listOfElements.Clear();
