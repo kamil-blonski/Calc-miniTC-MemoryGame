@@ -10,6 +10,9 @@ namespace TC
     {
         string CurrentPath { get; set; }
         string[] Drives { set; }
+        string[] FilesInDirectory { set; }
         event Action LoadingDrives;
+        event Action <string> ChangingDrive;
+        event Action<string> ShowFilesInDirectory;
     }
 }

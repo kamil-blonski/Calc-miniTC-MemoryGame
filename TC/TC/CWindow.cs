@@ -13,6 +13,8 @@ namespace TC
     public partial class CWindow : UserControl, InterfacePanelViev
     {
         public event Action LoadingDrives;
+        public event Action<string> ChangingDrive;
+        public event Action<string> ShowFilesInDirectory;
         public string CurrentPath
         {
             get
@@ -36,6 +38,16 @@ namespace TC
             }
         }
 
+        public string [] FilesInDirectory
+        {
+            set
+            {
+                ListBoxFile.Items.Clear();
+                foreach (var element in value)
+                    ListBoxFile.Items.Add(element);
+            }
+        }
+
         public CWindow()
         {
             InitializeComponent();
@@ -51,11 +63,15 @@ namespace TC
         {
             if (LoadingDrives != null)
                 LoadingDrives();
+
         }
 
         private void ComboBoxDrives_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (ChangingDrive != null)
+                ChangingDrive(ComboBoxDrives.SelectedItem.ToString());
+            if (ShowFilesInDirectory != null)
+                ShowFilesInDirectory(ComboBoxDrives.Text);
         }
     }
 }
