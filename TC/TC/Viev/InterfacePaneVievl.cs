@@ -11,8 +11,7 @@ namespace TC
         string CurrentPath { get; set; }
         string[] Drives { set; }
         string[] FilesInDirectory { set; }
-        event Action LoadingDrives;
-        event Action <string> ChangingDrive;
-        event Action<string> ShowFilesInDirectory;
+        event Action LoadingDrives, ChangingFolderBack;
+        event Action <string> ChangingDrive, ShowFilesInDirectory, ChangingFolder;
     }
 }

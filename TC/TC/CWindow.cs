@@ -12,9 +12,8 @@ namespace TC
 {
     public partial class CWindow : UserControl, InterfacePanelViev
     {
-        public event Action LoadingDrives;
-        public event Action<string> ChangingDrive;
-        public event Action<string> ShowFilesInDirectory;
+        public event Action LoadingDrives, ChangingFolderBack;
+        public event Action<string> ChangingDrive, ShowFilesInDirectory, ChangingFolder;
         public string CurrentPath
         {
             get
@@ -53,17 +52,17 @@ namespace TC
             InitializeComponent();
         }
 
-        private void ComboBoxDrives_MouseDown(object sender, MouseEventArgs e)
-        {
-            //if (LoadDrives != null)
-              //  LoadDrives();
-        }
-
         private void ComboBoxDrives_MouseClick(object sender, MouseEventArgs e)
         {
             if (LoadingDrives != null)
                 LoadingDrives();
 
+        }
+
+        private void ButtonGoBack_Click(object sender, EventArgs e)
+        {
+            if (ChangingFolderBack != null)
+                ChangingFolderBack();
         }
 
         private void ComboBoxDrives_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +71,14 @@ namespace TC
                 ChangingDrive(ComboBoxDrives.SelectedItem.ToString());
             if (ShowFilesInDirectory != null)
                 ShowFilesInDirectory(ComboBoxDrives.Text);
+        }
+
+        private void ListBoxFile_DoubleClick(object sender, EventArgs e)
+        {
+            if (ChangingFolder != null)
+                ChangingFolder(ListBoxFile.SelectedItem.ToString());
+            if (ShowFilesInDirectory != null)
+               ShowFilesInDirectory(ListBoxFile.SelectedItem.ToString());
         }
     }
 }

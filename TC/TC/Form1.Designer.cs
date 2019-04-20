@@ -35,28 +35,28 @@
             // ControlLeftPanel
             // 
             this.ControlLeftPanel.CurrentPath = "";
-            this.ControlLeftPanel.Location = new System.Drawing.Point(12, 12);
+            this.ControlLeftPanel.Location = new System.Drawing.Point(21, 12);
             this.ControlLeftPanel.Name = "ControlLeftPanel";
-            this.ControlLeftPanel.Size = new System.Drawing.Size(284, 383);
+            this.ControlLeftPanel.Size = new System.Drawing.Size(361, 510);
             this.ControlLeftPanel.TabIndex = 0;
             // 
             // ControlRightPanel
             // 
             this.ControlRightPanel.CurrentPath = "";
-            this.ControlRightPanel.Location = new System.Drawing.Point(319, 11);
+            this.ControlRightPanel.Location = new System.Drawing.Point(415, 12);
             this.ControlRightPanel.Name = "ControlRightPanel";
-            this.ControlRightPanel.Size = new System.Drawing.Size(284, 383);
+            this.ControlRightPanel.Size = new System.Drawing.Size(380, 510);
             this.ControlRightPanel.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 406);
+            this.ClientSize = new System.Drawing.Size(818, 534);
             this.Controls.Add(this.ControlRightPanel);
             this.Controls.Add(this.ControlLeftPanel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TC Kamil Błoński";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

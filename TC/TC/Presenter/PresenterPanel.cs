@@ -21,7 +21,9 @@ namespace TC.PresenterNS
             this.viev.LoadingDrives += Viev_LoadDrives; //wywołanie tego z () i bez () ??
             this.viev.ChangingDrive += Viev_ChangeDrive;
             this.viev.ShowFilesInDirectory += Viev_ShowFilesInDirectory;
-
+            this.viev.ChangingFolder += Viev_ChangingFolder;
+            this.viev.ChangingFolderBack += Viev_ChangingFolderBack;
+        
         }
 
         public void Viev_LoadDrives()
@@ -31,12 +33,22 @@ namespace TC.PresenterNS
 
         public void Viev_ChangeDrive(string selectedDrive)
         {
-            viev.CurrentPath = model.ChangePath(selectedDrive);
+            viev.CurrentPath = model.ChangeDrive(selectedDrive);
         }
 
-        public void Viev_ShowFilesInDirectory(string directory)
+        public void Viev_ShowFilesInDirectory(string selectedItem)
         {
-            viev.FilesInDirectory = model.FilesInDirectory(directory);
+            viev.FilesInDirectory = model.FilesInDirectory(selectedItem);
+        }
+        public void Viev_ChangingFolder(string selectedFolder)
+        {
+            viev.CurrentPath = model.ChangingFolder(selectedFolder);
+        }
+
+        public void Viev_ChangingFolderBack()
+        {
+            viev.CurrentPath = model.ChangeFolderBackDecision();
+            viev.FilesInDirectory = model.FilesInDirectory(viev.CurrentPath);
         }
     }
 }

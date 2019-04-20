@@ -10,5 +10,6 @@ namespace TC.VievNS
     {
         InterfacePanelViev Left { get; }
         InterfacePanelViev Right { get; }
+        //event Action CopyItem;
     }
 }
