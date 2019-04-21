@@ -9,7 +9,8 @@ namespace TC.VievNS
     public interface InterfaceViev
     {
         InterfacePanelViev Left { get; }
+        
         InterfacePanelViev Right { get; }
-        //event Action CopyItem;
+        event Action<bool> CopyItem;
     }
 }

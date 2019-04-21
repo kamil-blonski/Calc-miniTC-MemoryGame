@@ -9,6 +9,7 @@ namespace TC
     public interface InterfacePanelViev
     {
         string CurrentPath { get; set; }
+        string SelectedItem { get; set; }
         string[] Drives { set; }
         string[] FilesInDirectory { set; }
         event Action LoadingDrives, ChangingFolderBack;

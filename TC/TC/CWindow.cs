@@ -14,6 +14,7 @@ namespace TC
     {
         public event Action LoadingDrives, ChangingFolderBack;
         public event Action<string> ChangingDrive, ShowFilesInDirectory, ChangingFolder;
+        private  string selectedItem;
         public string CurrentPath
         {
             get
@@ -26,11 +27,22 @@ namespace TC
             }
         }
 
+        public string SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+            set
+            {
+                selectedItem = value;
+            }
+
+        }
         public string[] Drives
         {
             set
             {
-                //Console.WriteLine("Kolejcka dysków.");
                 ComboBoxDrives.Items.Clear();
                 foreach (var element in value)
                     ComboBoxDrives.Items.Add(element);
@@ -59,6 +71,12 @@ namespace TC
 
         }
 
+        private void ListBoxFile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ListBoxFile.SelectedItem != null)
+                SelectedItem = ListBoxFile.SelectedItem.ToString();
+        }
+
         private void ButtonGoBack_Click(object sender, EventArgs e)
         {
             if (ChangingFolderBack != null)
@@ -75,9 +93,9 @@ namespace TC
 
         private void ListBoxFile_DoubleClick(object sender, EventArgs e)
         {
-            if (ChangingFolder != null)
+            if (ChangingFolder != null && ListBoxFile.SelectedItem != null)
                 ChangingFolder(ListBoxFile.SelectedItem.ToString());
-            if (ShowFilesInDirectory != null)
+            if (ShowFilesInDirectory != null && ListBoxFile.SelectedItem != null)
                ShowFilesInDirectory(ListBoxFile.SelectedItem.ToString());
         }
     }

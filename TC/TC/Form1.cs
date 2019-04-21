@@ -34,9 +34,24 @@ namespace TC
             }
         }
 
+        public event Action <bool> CopyItem;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void ButtonCopyToLeft_Click(object sender, EventArgs e)
+        {
+            if (CopyItem != null)
+                CopyItem(true);
+        }
+
+        private void ButtonCopyToRight_Click(object sender, EventArgs e)
+        {
+            if (CopyItem != null)
+                CopyItem(false);
         }
     }
 }

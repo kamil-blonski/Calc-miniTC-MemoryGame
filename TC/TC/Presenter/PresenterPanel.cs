@@ -18,12 +18,11 @@ namespace TC.PresenterNS
             //Console.WriteLine("Konstruktor PresenterPanel");
             this.viev = viev;
             this.model = model;
-            this.viev.LoadingDrives += Viev_LoadDrives; //wywołanie tego z () i bez () ??
+            this.viev.LoadingDrives += Viev_LoadDrives; 
             this.viev.ChangingDrive += Viev_ChangeDrive;
             this.viev.ShowFilesInDirectory += Viev_ShowFilesInDirectory;
             this.viev.ChangingFolder += Viev_ChangingFolder;
             this.viev.ChangingFolderBack += Viev_ChangingFolderBack;
-        
         }
 
         public void Viev_LoadDrives()
@@ -44,7 +43,6 @@ namespace TC.PresenterNS
         {
             viev.CurrentPath = model.ChangingFolder(selectedFolder);
         }
-
         public void Viev_ChangingFolderBack()
         {
             viev.CurrentPath = model.ChangeFolderBackDecision();

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.ComboBoxDrives = new System.Windows.Forms.ComboBox();
             this.LabelSelectHDIsk = new System.Windows.Forms.Label();
-            this.ButtonCopy = new System.Windows.Forms.Button();
             this.ListBoxFile = new System.Windows.Forms.ListBox();
             this.LabelFIles = new System.Windows.Forms.Label();
             this.TextBoxCurrentPath = new System.Windows.Forms.TextBox();
@@ -58,15 +57,6 @@
             this.LabelSelectHDIsk.TabIndex = 1;
             this.LabelSelectHDIsk.Text = "Select hard drive:";
             // 
-            // ButtonCopy
-            // 
-            this.ButtonCopy.Location = new System.Drawing.Point(123, 482);
-            this.ButtonCopy.Name = "ButtonCopy";
-            this.ButtonCopy.Size = new System.Drawing.Size(105, 24);
-            this.ButtonCopy.TabIndex = 2;
-            this.ButtonCopy.Text = "Copy";
-            this.ButtonCopy.UseVisualStyleBackColor = true;
-            // 
             // ListBoxFile
             // 
             this.ListBoxFile.FormattingEnabled = true;
@@ -75,6 +65,7 @@
             this.ListBoxFile.Name = "ListBoxFile";
             this.ListBoxFile.Size = new System.Drawing.Size(351, 356);
             this.ListBoxFile.TabIndex = 3;
+            this.ListBoxFile.SelectedIndexChanged += new System.EventHandler(this.ListBoxFile_SelectedIndexChanged);
             this.ListBoxFile.DoubleClick += new System.EventHandler(this.ListBoxFile_DoubleClick);
             // 
             // LabelFIles
@@ -118,11 +109,10 @@
             this.Controls.Add(this.TextBoxCurrentPath);
             this.Controls.Add(this.LabelFIles);
             this.Controls.Add(this.ListBoxFile);
-            this.Controls.Add(this.ButtonCopy);
             this.Controls.Add(this.LabelSelectHDIsk);
             this.Controls.Add(this.ComboBoxDrives);
             this.Name = "CWindow";
-            this.Size = new System.Drawing.Size(360, 537);
+            this.Size = new System.Drawing.Size(360, 499);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +122,6 @@
 
         private System.Windows.Forms.ComboBox ComboBoxDrives;
         private System.Windows.Forms.Label LabelSelectHDIsk;
-        private System.Windows.Forms.Button ButtonCopy;
         private System.Windows.Forms.ListBox ListBoxFile;
         private System.Windows.Forms.Label LabelFIles;
         private System.Windows.Forms.TextBox TextBoxCurrentPath;

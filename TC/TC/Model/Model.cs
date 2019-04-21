@@ -39,7 +39,10 @@ namespace TC.ModelNS
                 MessageBox.Show("You have no access to this file.", "Error.", MessageBoxButtons.OK);
                 return currentPath;
             }
-
+            catch(Exception)
+            {
+                return currentPath;
+            }
             if (Directory.Exists(currentPath + selectedItem))
             {
                 currentPath += selectedItem + "\\";
@@ -91,6 +94,56 @@ namespace TC.ModelNS
                 MessageBox.Show("This is not a folder.", "Error", MessageBoxButtons.OK);
                 return listOfFiles.ToArray();
             }
+        }
+
+        public bool CopyItem(string sourcePath, string destinationPath, string selectedItem)
+        {
+            Console.WriteLine("Selecteditem: " + selectedItem);
+            if(selectedItem == null)
+            {
+                MessageBox.Show("Select a file or folder to copy.", "Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if(File.Exists(destinationPath + selectedItem) || Directory.Exists(destinationPath + selectedItem))
+            {
+                MessageBox.Show("File or folder " + selectedItem + " is already exist in destination location. ", "Error.", MessageBoxButtons.OK);
+                return false;
+            }
+            if(File.Exists(sourcePath + selectedItem) && !Directory.Exists(sourcePath + selectedItem)) //File selected
+            {
+                Console.WriteLine("Wybrano plik");
+                if (Directory.Exists(destinationPath))
+                {
+                    if (File.Exists(sourcePath + selectedItem))
+                    {
+                        File.Copy(sourcePath + selectedItem, destinationPath + selectedItem, true);
+                        MessageBox.Show("File copied.", "Success.", MessageBoxButtons.OK);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No such file to copy.");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No such destination directory.", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+            }
+            else if (!File.Exists(sourcePath + selectedItem) && Directory.Exists(sourcePath)) //Folder selected
+            {
+                MessageBox.Show("You selected a folder, I haven't implement this functionality yet ;).", "Error, but not completely.", MessageBoxButtons.OK);
+
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Selected file does not exist any more.", "Error.", MessageBoxButtons.OK);
+            }
+            
+            return false;
         }
     }
 }
