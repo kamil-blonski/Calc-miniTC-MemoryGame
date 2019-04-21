@@ -30,15 +30,22 @@ namespace TC.PresenterNS
             if (selectedButton)
             {
                 copyOperation = model.CopyItem(viev.Right.CurrentPath, viev.Left.CurrentPath, viev.Right.SelectedItem);
+                if (copyOperation)
+                {
+                    viev.Left.FilesInDirectory = model.FilesInDirectory(viev.Left.CurrentPath);
+                    copyOperation = false;
+                }
             }
             else
             {
                 copyOperation = model.CopyItem(viev.Left.CurrentPath, viev.Right.CurrentPath, viev.Left.SelectedItem);
+                if (copyOperation)
+                {
+                    viev.Right.FilesInDirectory = model.FilesInDirectory(viev.Right.CurrentPath);
+                    copyOperation = false;
+                }
             }
-            if (copyOperation)
-            {
-                viev.Right.FilesInDirectory = model.FilesInDirectory(viev.Right.CurrentPath);
-            }
+
         }
     }
 }

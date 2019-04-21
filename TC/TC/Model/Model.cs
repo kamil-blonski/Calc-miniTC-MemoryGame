@@ -134,16 +134,39 @@ namespace TC.ModelNS
             }
             else if (!File.Exists(sourcePath + selectedItem) && Directory.Exists(sourcePath)) //Folder selected
             {
-                MessageBox.Show("You selected a folder, I haven't implement this functionality yet ;).", "Error, but not completely.", MessageBoxButtons.OK);
 
+                var diSource = new DirectoryInfo(sourcePath + selectedItem);
+                var diTarget = new DirectoryInfo(destinationPath + selectedItem);
+                CopyFoldersHelp(diSource, diTarget);
+                MessageBox.Show("Folder " + sourcePath + selectedItem + " copied.", "Success", MessageBoxButtons.OK);
                 return true;
             }
             else
             {
                 MessageBox.Show("Selected file does not exist any more.", "Error.", MessageBoxButtons.OK);
+                return false;
             }
             
             return false;
+        }
+
+        public static void CopyFoldersHelp(DirectoryInfo source, DirectoryInfo target)
+        {
+            Directory.CreateDirectory(target.FullName);
+
+            // Copy each file into the new directory.
+            foreach (FileInfo file in source.GetFiles())
+            {
+                file.CopyTo(Path.Combine(target.FullName, file.Name), true);
+            }
+
+            // Copy each subdirectory using recursion.
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir =
+                    target.CreateSubdirectory(diSourceSubDir.Name);
+                CopyFoldersHelp(diSourceSubDir, nextTargetSubDir);
+            }
         }
     }
 }
