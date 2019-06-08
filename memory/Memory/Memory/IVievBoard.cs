@@ -9,11 +9,14 @@ namespace Memory
     interface IVievBoard
     {
         event Action<Label> Click;
-        event Action StartTimer;
+        event Action StartTimer, CheckChoices;
         TableLayoutPanel TableLayoutPanel { get; set; }
         Label FirstClick { get; set; }
         Label SecondClick { get; set; }
+
         Timer Timer { get; set; }
+        int CorrectChoices { get; set; }
+        int WrongChoices { get; set; }
 
     }
 }

@@ -34,36 +34,12 @@ namespace Memory
             
         }
 
-        public Board NewBoard
-        {
-            set
-            {
-               _NewBoard = value;
-            }
-            get
-            {
-                return _NewBoard;
-            }
-        }
+        public Board NewBoard { set { _NewBoard = value; } get { return _NewBoard; } }
 
         public TableLayoutPanel TableLayoutPanel
-        {
-            set
-            {
-                _TableLayoutPanel = value;
-            }
-            get
-            {
-                return _TableLayoutPanel;
-            }
-        }
-
-       IVievBoard IViev.IVievBoard
-        {
-            get
-            {
-                return board1;
-            }
-        }
+        { set {  _TableLayoutPanel = value; } get { return _TableLayoutPanel; } }
+        IVievBoard IViev.IVievBoard { get { return board1; } }
+        public string CorrectChoicesLabel { get { return LabelCorrectChoice.Text; } set { LabelCorrectChoice.Text = value; } }
+        public string WrongChoicesLabel { get { return LabelWrongChoice.Text; } set { LabelWrongChoice.Text = value; } }
     }
 }

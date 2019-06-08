@@ -13,15 +13,17 @@ namespace Memory
     public partial class Board : UserControl, IVievBoard
     {
         public event Action<Label> Click;
-        public event Action StartTimer;
+        public event Action StartTimer, CheckChoices;
         private TableLayoutPanel _TableLayoutPanel;
         private Label _firstClick, _secondClick;
         private Timer _timer;
+        private int _correctChoices = 0, _wroncChoices = 0;
+
         public Board()
         {
             InitializeComponent();
             TableLayoutPanel = tableLayoutPanel;
-            Timer = timer; 
+            Timer = timer;
         }
 
         public TableLayoutPanel TableLayoutPanel
@@ -56,8 +58,12 @@ namespace Memory
             {
                 _secondClick = value;
                 if (_secondClick != null)
+                {
                     _secondClick.ForeColor = Color.Black;
-                StartTimer();
+                    CheckChoices();
+                }
+                if(StartTimer != null)
+                    StartTimer();
             }
             get
             {
@@ -77,6 +83,30 @@ namespace Memory
             }
         }
 
+        public int CorrectChoices
+        {
+            set
+            {
+                _correctChoices += value;
+            }
+            get
+            {
+                return _correctChoices;
+            }
+        }
+
+        public int WrongChoices
+        {
+            set
+            {
+                _wroncChoices += value;
+            }
+            get
+            {
+                return _wroncChoices;
+            }
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -85,7 +115,7 @@ namespace Memory
         private void timer_active(object sender, EventArgs e) //dlaczego ta metoda wykonuje się dwa razy?
         {
             timer.Stop();
-            timer.Enabled = false;
+            //timer.Enabled = false;
             Console.WriteLine("Zatrzymuje");
 
             if (FirstClick != null && SecondClick != null)
@@ -106,7 +136,16 @@ namespace Memory
             if (FirstClick != null && SecondClick != null)
                 return;
             if (Click != null)
-                Click((Label)sender);
+            {
+                try
+                {
+                    Click((Label)sender);
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show("Staraj sie unikaj klikania w przerwy!");
+                }
+            }
         }
     }
 }

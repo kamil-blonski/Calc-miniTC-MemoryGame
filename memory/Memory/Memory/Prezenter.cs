@@ -19,6 +19,7 @@ namespace Memory
             this.viev.AssignIconsToSquares += AssignIconsToSquares;
             this.viev.IVievBoard.Click += Click;
             this.viev.IVievBoard.StartTimer += StartTimer;
+            this.viev.IVievBoard.CheckChoices += CheckChoices;
         }
 
         private void StartGame()
@@ -73,6 +74,16 @@ namespace Memory
         private void StartTimer()
         {
             viev.IVievBoard.Timer.Start();
+        }
+
+        private void CheckChoices()
+        {
+            if (model.CheckChoices())
+                viev.IVievBoard.CorrectChoices = 1;
+            else
+                viev.IVievBoard.WrongChoices = 1;
+            viev.CorrectChoicesLabel = viev.IVievBoard.CorrectChoices.ToString();
+            viev.WrongChoicesLabel = viev.IVievBoard.WrongChoices.ToString();
         }
     }
 }

@@ -67,5 +67,11 @@ namespace Memory
             secondClick = null;
         }
 
+        public Boolean CheckChoices()
+        {
+            Console.WriteLine("Powórnuje kliknięcia: " + firstClick.Equals(secondClick));
+            return firstClick.Text.Equals(secondClick.Text);
+        }
+
     }
 }

@@ -13,5 +13,7 @@ namespace Memory
         Board NewBoard { set; get; }
         TableLayoutPanel TableLayoutPanel { set; get; }
         IVievBoard IVievBoard { get; }
+        string CorrectChoicesLabel { get; set; }
+        string WrongChoicesLabel { get; set; }
     }
 }
