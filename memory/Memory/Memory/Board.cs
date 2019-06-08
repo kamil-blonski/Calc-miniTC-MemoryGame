@@ -62,8 +62,9 @@ namespace Memory
                     _secondClick.ForeColor = Color.Black;
                     CheckChoices();
                 }
-                if(StartTimer != null)
-                    StartTimer();
+                if(StartTimer != null )
+                    if(FirstClick != null && SecondClick != null)
+                        StartTimer();
             }
             get
             {
@@ -114,15 +115,12 @@ namespace Memory
 
         private void timer_active(object sender, EventArgs e) //dlaczego ta metoda wykonuje się dwa razy?
         {
+            Console.WriteLine("STOP TIME");
             timer.Stop();
-            //timer.Enabled = false;
-            Console.WriteLine("Zatrzymuje");
-
             if (FirstClick != null && SecondClick != null)
             {
                 FirstClick.ForeColor = FirstClick.BackColor;
                 SecondClick.ForeColor = SecondClick.BackColor;
-                Console.WriteLine("ROBIE NULLE");
                 _firstClick = null;
                 _secondClick = null;
                 FirstClick = null;
@@ -141,9 +139,9 @@ namespace Memory
                 {
                     Click((Label)sender);
                 }
-                catch(Exception exc)
+                catch(Exception exp)
                 {
-                    MessageBox.Show("Staraj sie unikaj klikania w przerwy!");
+                    
                 }
             }
         }

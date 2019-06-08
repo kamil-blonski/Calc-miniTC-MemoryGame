@@ -36,6 +36,8 @@
             this.LabelCorrectChoiceX = new System.Windows.Forms.Label();
             this.LabelWrongChoice = new System.Windows.Forms.Label();
             this.LabelCorrectChoice = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,9 +67,9 @@
             // 
             // ButtonStart
             // 
-            this.ButtonStart.Location = new System.Drawing.Point(12, 12);
+            this.ButtonStart.Location = new System.Drawing.Point(18, 12);
             this.ButtonStart.Name = "ButtonStart";
-            this.ButtonStart.Size = new System.Drawing.Size(198, 43);
+            this.ButtonStart.Size = new System.Drawing.Size(198, 58);
             this.ButtonStart.TabIndex = 1;
             this.ButtonStart.Text = "Start";
             this.ButtonStart.UseVisualStyleBackColor = true;
@@ -113,11 +115,29 @@
             this.LabelCorrectChoice.TabIndex = 5;
             this.LabelCorrectChoice.Text = "0";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(605, 44);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(361, 23);
+            this.progressBar1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(602, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Kliknij Start, aby rozpocząć.";
+            // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 861);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.LabelCorrectChoice);
             this.Controls.Add(this.LabelWrongChoice);
             this.Controls.Add(this.LabelCorrectChoiceX);
@@ -142,6 +162,8 @@
         private System.Windows.Forms.Label LabelWrongChoice;
         private System.Windows.Forms.Label LabelCorrectChoice;
         private Board board1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

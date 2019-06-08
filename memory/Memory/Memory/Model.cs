@@ -8,8 +8,8 @@ namespace Memory
 {
     class Model
     {
-        Board board;
-        Label firstClick, secondClick;
+        private Board board;
+        private Label firstClick, secondClick;
         public Board StartGame()
         {
             board = new Board();
@@ -30,14 +30,12 @@ namespace Memory
         {
             if (firstClick == null)
             {
-                Console.WriteLine("Zapisuje pierwszy klik");
                 firstClick = label;
                 return;
             }
 
             if (label != firstClick) //zabezpiecza przed możliwością wyboru dwa razy tego samego obrazka
             {
-                Console.WriteLine("Zapisuje drugi klik");
                 secondClick = label;
                 return;
             }         
@@ -45,7 +43,6 @@ namespace Memory
 
         public Label FirstClick()
         {
-            Console.WriteLine("Model, firstclick");
             if(firstClick != null)
                 return firstClick;
             else
@@ -54,7 +51,6 @@ namespace Memory
 
         public Label SecondClick()
         {
-            Console.WriteLine("Model, secondclick");
             if (secondClick != null)
                 return secondClick; 
             else
@@ -69,7 +65,6 @@ namespace Memory
 
         public Boolean CheckChoices()
         {
-            Console.WriteLine("Powórnuje kliknięcia: " + firstClick.Equals(secondClick));
             return firstClick.Text.Equals(secondClick.Text);
         }
 

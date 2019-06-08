@@ -35,7 +35,6 @@ namespace Memory
 
             for(int i = 0; i < viev.IVievBoard.TableLayoutPanel.Controls.Count; i++)
             {
-                Console.WriteLine(i);
                 if (viev.IVievBoard.TableLayoutPanel.Controls[i] is Label)
                     label = (Label)viev.IVievBoard.TableLayoutPanel.Controls[i];
                 else
@@ -73,15 +72,26 @@ namespace Memory
 
         private void StartTimer()
         {
+            Console.WriteLine("Zacyznam mierzyć czas");
             viev.IVievBoard.Timer.Start();
         }
 
         private void CheckChoices()
         {
             if (model.CheckChoices())
+            {
                 viev.IVievBoard.CorrectChoices = 1;
+                viev.IVievBoard.FirstClick.Enabled = false;
+                viev.IVievBoard.SecondClick.Enabled = false;
+                viev.IVievBoard.FirstClick = null; //czyści zmienne aby pozostawić je czarne na planszy
+                viev.IVievBoard.SecondClick = null;
+            }
             else
+            {
                 viev.IVievBoard.WrongChoices = 1;
+                viev.IVievBoard.Timer.Start(); //??
+            }
+
             viev.CorrectChoicesLabel = viev.IVievBoard.CorrectChoices.ToString();
             viev.WrongChoicesLabel = viev.IVievBoard.WrongChoices.ToString();
         }
