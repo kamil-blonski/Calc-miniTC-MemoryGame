@@ -17,6 +17,7 @@ namespace Memory
             //Dock = fill - autodopasowanie tabelki do okna kontrolki
             //Console.WriteLine("LOADING board ... ");
             InitializeComponent();
+            
             //TableLayoutPanel TLP = new TableLayoutPanel();
             
         }
@@ -28,7 +29,7 @@ namespace Memory
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
     }
 }

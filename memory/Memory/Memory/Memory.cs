@@ -15,6 +15,7 @@ namespace Memory
         public event Action StartGame;
         public event Action<TableLayoutPanel> AssignIconsToSquares;
         private Board _NewBoard;
+        private TableLayoutPanel _TableLayoutPanel;
         public Memory()
         {
             InitializeComponent();
@@ -43,5 +44,18 @@ namespace Memory
                 return _NewBoard;
             }
         }
+
+        public TableLayoutPanel TableLayoutPanel
+        {
+            set
+            {
+                _TableLayoutPanel = value;
+            }
+            get
+            {
+                return _TableLayoutPanel;
+            }
+        }
+
     }
 }

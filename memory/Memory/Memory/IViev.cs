@@ -11,5 +11,6 @@ namespace Memory
         event Action StartGame;
         event Action<TableLayoutPanel> AssignIconsToSquares;
         Board NewBoard { set; get; }
+        TableLayoutPanel TableLayoutPanel { set; get; }
     }
 }
