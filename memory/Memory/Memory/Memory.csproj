@@ -52,7 +52,7 @@
     <Compile Include="Board.Designer.cs">
       <DependentUpon>Board.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameEngine.cs" />
+    <Compile Include="IVievBoard.cs" />
     <Compile Include="Memory.cs">
       <SubType>Form</SubType>
     </Compile>

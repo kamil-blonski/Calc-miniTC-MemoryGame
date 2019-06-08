@@ -34,10 +34,13 @@
             this.LabelCorrectChoiceX = new System.Windows.Forms.Label();
             this.LabelWrongChoice = new System.Windows.Forms.Label();
             this.LabelCorrectChoice = new System.Windows.Forms.Label();
+            this.board1 = new Board();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.board1);
             this.groupBox1.Location = new System.Drawing.Point(10, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(960, 800);
@@ -88,6 +91,17 @@
             this.LabelCorrectChoice.Size = new System.Drawing.Size(0, 17);
             this.LabelCorrectChoice.TabIndex = 5;
             // 
+            // board1
+            // 
+            this.board1.AccessibleName = "boardControl";
+            this.board1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.board1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.board1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.board1.Location = new System.Drawing.Point(111, 21);
+            this.board1.Name = "board1";
+            this.board1.Size = new System.Drawing.Size(720, 650);
+            this.board1.TabIndex = 0;
+            // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -102,6 +116,7 @@
             this.Name = "Memory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gra w pamięć";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +130,7 @@
         private System.Windows.Forms.Label LabelCorrectChoiceX;
         private System.Windows.Forms.Label LabelWrongChoice;
         private System.Windows.Forms.Label LabelCorrectChoice;
+        private Board board1;
     }
 }
 

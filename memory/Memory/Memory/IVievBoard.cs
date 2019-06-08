@@ -8,6 +8,12 @@ namespace Memory
 {
     interface IVievBoard
     {
-        //TableLayoutPanel TableLayoutPanel { get; }
+        event Action<Label> Click;
+        event Action StartTimer;
+        TableLayoutPanel TableLayoutPanel { get; set; }
+        Label FirstClick { get; set; }
+        Label SecondClick { get; set; }
+        Timer Timer { get; set; }
+
     }
 }
