@@ -56,6 +56,7 @@
             this.board1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.board1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.board1.CorrectChoices = 0;
+            this.board1.CorrectChoicesR = 0;
             this.board1.FirstClick = null;
             this.board1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.board1.Location = new System.Drawing.Point(6, 9);
@@ -64,6 +65,7 @@
             this.board1.Size = new System.Drawing.Size(948, 761);
             this.board1.TabIndex = 0;
             this.board1.WrongChoices = 0;
+            this.board1.WrongChoicesR = 0;
             // 
             // ButtonStart
             // 
@@ -138,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(982, 861);
             this.Controls.Add(this.ButtonReset);
             this.Controls.Add(this.label1);

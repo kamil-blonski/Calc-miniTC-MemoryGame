@@ -284,7 +284,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 750;
+            this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_active);
             // 
             // Board
