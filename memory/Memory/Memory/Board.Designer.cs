@@ -99,7 +99,6 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(173, 160);
             this.label16.TabIndex = 15;
-            this.label16.Text = "q";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label16.Click += new System.EventHandler(this.label_Click);
             // 
@@ -112,7 +111,6 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(171, 160);
             this.label15.TabIndex = 14;
-            this.label15.Text = "q";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label15.Click += new System.EventHandler(this.label_Click);
             // 
@@ -125,7 +123,6 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(171, 160);
             this.label14.TabIndex = 13;
-            this.label14.Text = "q";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label14.Click += new System.EventHandler(this.label_Click);
             // 
@@ -138,7 +135,6 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(171, 160);
             this.label13.TabIndex = 12;
-            this.label13.Text = "q";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label13.Click += new System.EventHandler(this.label_Click);
             // 
@@ -151,7 +147,6 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(173, 160);
             this.label12.TabIndex = 11;
-            this.label12.Text = "q";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label12.Click += new System.EventHandler(this.label_Click);
             // 
@@ -164,7 +159,6 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(171, 160);
             this.label11.TabIndex = 10;
-            this.label11.Text = "q";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label11.Click += new System.EventHandler(this.label_Click);
             // 
@@ -177,7 +171,6 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(171, 160);
             this.label10.TabIndex = 9;
-            this.label10.Text = "q";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label10.Click += new System.EventHandler(this.label_Click);
             // 
@@ -190,7 +183,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(171, 160);
             this.label9.TabIndex = 8;
-            this.label9.Text = "q";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Click += new System.EventHandler(this.label_Click);
             // 
@@ -203,7 +195,6 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(173, 160);
             this.label8.TabIndex = 7;
-            this.label8.Text = "q";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label8.Click += new System.EventHandler(this.label_Click);
             // 
@@ -216,7 +207,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 160);
             this.label7.TabIndex = 6;
-            this.label7.Text = "q";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label_Click);
             // 
@@ -229,7 +219,6 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 160);
             this.label6.TabIndex = 5;
-            this.label6.Text = "q";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label_Click);
             // 
@@ -242,7 +231,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 160);
             this.label5.TabIndex = 4;
-            this.label5.Text = "q";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label_Click);
             // 
@@ -255,7 +243,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 160);
             this.label4.TabIndex = 3;
-            this.label4.Text = "q";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Click += new System.EventHandler(this.label_Click);
             // 
@@ -268,7 +255,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(171, 160);
             this.label3.TabIndex = 2;
-            this.label3.Text = "q";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label_Click);
             // 
@@ -281,7 +267,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 160);
             this.label2.TabIndex = 1;
-            this.label2.Text = "q";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label_Click);
             // 
@@ -294,7 +279,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 160);
             this.label1.TabIndex = 0;
-            this.label1.Text = "q";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label_Click);
             // 

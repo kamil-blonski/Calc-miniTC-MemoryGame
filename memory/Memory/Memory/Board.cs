@@ -13,7 +13,7 @@ namespace Memory
     public partial class Board : UserControl, IVievBoard
     {
         public event Action<Label> Click;
-        public event Action StartTimer, CheckChoices;
+        public event Action StartTimer, CheckChoices, CheckIfEnd;
         private TableLayoutPanel _TableLayoutPanel;
         private Label _firstClick, _secondClick;
         private Timer _timer;
@@ -61,10 +61,12 @@ namespace Memory
                 {
                     _secondClick.ForeColor = Color.Black;
                     CheckChoices();
+                    CheckIfEnd();
                 }
-                if(StartTimer != null )
-                    if(FirstClick != null && SecondClick != null)
+                if (StartTimer != null)
+                    if (FirstClick != null && SecondClick != null)
                         StartTimer();
+                        
             }
             get
             {
