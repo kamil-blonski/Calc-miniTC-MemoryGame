@@ -9,7 +9,7 @@ namespace Memory
     interface IViev
     {
         event Action StartGame;
-        event Action AssignIconsToSquares;
+        event Action AssignIconsToSquares, ResetGame;
         Board NewBoard { set; get; }
         TableLayoutPanel TableLayoutPanel { set; get; }
         IVievBoard IVievBoard { get; }

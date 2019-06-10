@@ -110,6 +110,30 @@ namespace Memory
             }
         }
 
+        public int CorrectChoicesR
+        {
+            set
+            {
+                _correctChoices = value;
+            }
+            get
+            {
+                return _correctChoices;
+            }
+        }
+
+        public int WrongChoicesR
+        {
+            set
+            {
+                _wroncChoices = value;
+            }
+            get
+            {
+                return _wroncChoices;
+            }
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -117,7 +141,6 @@ namespace Memory
 
         private void timer_active(object sender, EventArgs e) //dlaczego ta metoda wykonuje się dwa razy?
         {
-            Console.WriteLine("STOP TIME");
             timer.Stop();
             if (FirstClick != null && SecondClick != null)
             {

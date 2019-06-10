@@ -37,6 +37,7 @@
             this.LabelWrongChoice = new System.Windows.Forms.Label();
             this.LabelCorrectChoice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ButtonReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,11 +124,22 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Kliknij Start, aby rozpocząć.";
             // 
+            // ButtonReset
+            // 
+            this.ButtonReset.Location = new System.Drawing.Point(222, 38);
+            this.ButtonReset.Name = "ButtonReset";
+            this.ButtonReset.Size = new System.Drawing.Size(193, 38);
+            this.ButtonReset.TabIndex = 8;
+            this.ButtonReset.Text = "Reset";
+            this.ButtonReset.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 861);
+            this.Controls.Add(this.ButtonReset);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelCorrectChoice);
             this.Controls.Add(this.LabelWrongChoice);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Label LabelCorrectChoice;
         private Board board1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ButtonReset;
     }
 }
 

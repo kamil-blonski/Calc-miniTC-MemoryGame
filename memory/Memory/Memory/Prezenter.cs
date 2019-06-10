@@ -21,6 +21,7 @@ namespace Memory
             this.viev.IVievBoard.StartTimer += StartTimer;
             this.viev.IVievBoard.CheckChoices += CheckChoices;
             this.viev.IVievBoard.CheckIfEnd += CheckIfEnd;
+            this.viev.ResetGame += ResetGame;
         }
 
         private void StartGame()
@@ -99,7 +100,6 @@ namespace Memory
 
         private void CheckIfEnd()
         {
-            Console.WriteLine("@@Check");
             Label label;
             for (int i = 0; i < viev.IVievBoard.TableLayoutPanel.Controls.Count; i++)
             {
@@ -109,6 +109,28 @@ namespace Memory
             }
             MessageBox.Show("Gratulacje! Udało Ci się dopasować wszystkie obrazki. Twój wynik procentowy udzielania poprawnych odpowiedzi to: " 
                 + Math.Round(((double)viev.IVievBoard.CorrectChoices / ((double)viev.IVievBoard.CorrectChoices + (double)viev.IVievBoard.WrongChoices)), 2)*100);
+            ResetGame();
+        }
+
+        private void ResetGame()
+        {
+            Console.WriteLine("Start reset");
+            Label label;
+            //new Prezenter(new Model(), new Memory());
+            viev.CorrectChoicesLabel = "0";
+            viev.WrongChoicesLabel = "0"; 
+            viev.IVievBoard.CorrectChoicesR = 0;
+            viev.IVievBoard.WrongChoicesR = 0;
+            
+            for (int i = 0; i < viev.IVievBoard.TableLayoutPanel.Controls.Count; i++)
+            {
+                label = (Label)viev.IVievBoard.TableLayoutPanel.Controls[i];
+                label.Enabled = true;
+                
+                label.ForeColor = System.Drawing.Color.Chocolate;
+                //label.Enabled = false;
+            }
+            //viev.IVievBoard.TableLayoutPanel.Enabled = false;
         }
     }
 }

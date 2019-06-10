@@ -17,6 +17,8 @@ namespace Memory
         Timer Timer { get; set; }
         int CorrectChoices { get; set; }
         int WrongChoices { get; set; }
+        int CorrectChoicesR { get; set; }
+        int WrongChoicesR { get; set; }
 
     }
 }

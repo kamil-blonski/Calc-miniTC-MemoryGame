@@ -12,23 +12,25 @@ namespace Memory
 {
     public partial class Memory : Form, IViev
     {
-        public event Action StartGame;
+        public event Action StartGame, ResetGame;
         public event Action AssignIconsToSquares;
         private Board _NewBoard;
         private TableLayoutPanel _TableLayoutPanel;
         public Memory()
         {
             InitializeComponent();
-            board1.Enabled = false;
+            board1.Visible = false;
+            ButtonReset.Enabled = false;
         }
 
-        private void ButtonStart_Click(object sender, EventArgs e)//Przycisk generuje plansze w gropuboxie
+        private void ButtonStart_Click(object sender, EventArgs e)
         {
             /*if (StartGame != null)
                 StartGame();
-
             groupBox1.Controls.Add(NewBoard);*/ //w jaki sposób odwołać się do dynamicznie utworzonego user control? Przykład metoda IViev.IVievBoard
-            board1.Enabled = true;
+            ButtonReset.Enabled = true;
+            ButtonStart.Enabled = false;
+            board1.Visible = true;
             if (AssignIconsToSquares != null)
                 AssignIconsToSquares();  //zastanowić się, czy da sięjakoś inaczej dostać do tableLayoutPanel z Board
             
@@ -41,5 +43,14 @@ namespace Memory
         IVievBoard IViev.IVievBoard { get { return board1; } }
         public string CorrectChoicesLabel { get { return LabelCorrectChoice.Text; } set { LabelCorrectChoice.Text = value; } }
         public string WrongChoicesLabel { get { return LabelWrongChoice.Text; } set { LabelWrongChoice.Text = value; } }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            board1.Visible = false;
+            ButtonStart.Enabled = true;
+            ButtonReset.Enabled = false;
+            if (ResetGame != null)
+                ResetGame();
+        }
     }
 }
