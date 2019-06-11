@@ -43,7 +43,12 @@ namespace Memory
         IVievBoard IViev.IVievBoard { get { return board1; } }
         public string CorrectChoicesLabel { get { return LabelCorrectChoice.Text; } set { LabelCorrectChoice.Text = value; } }
         public string WrongChoicesLabel { get { return LabelWrongChoice.Text; } set { LabelWrongChoice.Text = value; } }
-        
+        public void ResetB()
+        {
+            ButtonReset.Enabled = false;
+            ButtonStart.Enabled = true;
+            board1.Visible = false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             board1.Visible = false;

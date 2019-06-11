@@ -15,5 +15,6 @@ namespace Memory
         IVievBoard IVievBoard { get; }
         string CorrectChoicesLabel { get; set; }
         string WrongChoicesLabel { get; set; }
+        void ResetB();
     }
 }

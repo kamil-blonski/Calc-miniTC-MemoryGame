@@ -114,9 +114,7 @@ namespace Memory
 
         private void ResetGame()
         {
-            Console.WriteLine("Start reset");
             Label label;
-            //new Prezenter(new Model(), new Memory());
             viev.CorrectChoicesLabel = "0";
             viev.WrongChoicesLabel = "0"; 
             viev.IVievBoard.CorrectChoicesR = 0;
@@ -126,11 +124,9 @@ namespace Memory
             {
                 label = (Label)viev.IVievBoard.TableLayoutPanel.Controls[i];
                 label.Enabled = true;
-                
                 label.ForeColor = System.Drawing.Color.Chocolate;
-                //label.Enabled = false;
             }
-            //viev.IVievBoard.TableLayoutPanel.Enabled = false;
+            viev.ResetB();
         }
     }
 }
