@@ -8,14 +8,8 @@ namespace Memory
 {
     class Model
     {
-        private Board board;
         private Label firstClick, secondClick;
         private Random random = new Random();
-        public Board StartGame()
-        {
-            board = new Board();
-            return board;
-        }
 
         public List<string> ListOfIcons()
         {
@@ -26,8 +20,6 @@ namespace Memory
                 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
                 '1', '2', '3', '4', '5', '6', '7', '8', '9'
             };
-            /*"!", "!", "N", "N", ",", ",", "k", "k",
-            "b", "b", "v", "v", "w", "w", "z", "z"*/
 
             List<string> Icons = new List<string>();
             int RandomNumber;
@@ -49,7 +41,7 @@ namespace Memory
                 return;
             }
 
-            if (label != firstClick) //zabezpiecza przed możliwością wyboru dwa razy tego samego obrazka
+            if (label != firstClick) 
             {
                 secondClick = label;
                 return;

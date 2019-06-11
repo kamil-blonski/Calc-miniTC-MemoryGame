@@ -15,18 +15,12 @@ namespace Memory
         {
             this.model = model;
             this.viev = viev;
-            this.viev.StartGame += StartGame;
             this.viev.AssignIconsToSquares += AssignIconsToSquares;
             this.viev.IVievBoard.Click += Click;
             this.viev.IVievBoard.StartTimer += StartTimer;
             this.viev.IVievBoard.CheckChoices += CheckChoices;
             this.viev.IVievBoard.CheckIfEnd += CheckIfEnd;
             this.viev.ResetGame += ResetGame;
-        }
-
-        private void StartGame()
-        {
-            viev.NewBoard = model.StartGame();
         }
 
         private void AssignIconsToSquares()
@@ -57,9 +51,9 @@ namespace Memory
                 {
                     viev.IVievBoard.FirstClick = label;
                 }
-
-                return; //Zapobiega wykonaniu kolejnego if
+                return; 
             }
+
             if(viev.IVievBoard.SecondClick == null)
             {
                 label = model.SecondClick();
@@ -74,7 +68,6 @@ namespace Memory
 
         private void StartTimer()
         {
-            Console.WriteLine("Zacyznam mierzyć czas");
             viev.IVievBoard.Timer.Start();
         }
 
@@ -91,7 +84,7 @@ namespace Memory
             else
             {
                 viev.IVievBoard.WrongChoices = 1;
-                viev.IVievBoard.Timer.Start(); //??
+                viev.IVievBoard.Timer.Start(); 
             }
 
             viev.CorrectChoicesLabel = viev.IVievBoard.CorrectChoices.ToString();

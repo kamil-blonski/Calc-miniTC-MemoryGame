@@ -12,7 +12,7 @@ namespace Memory
 {
     public partial class Memory : Form, IViev
     {
-        public event Action StartGame, ResetGame;
+        public event Action ResetGame;
         public event Action AssignIconsToSquares;
         private Board _NewBoard;
         private TableLayoutPanel _TableLayoutPanel;
@@ -32,17 +32,60 @@ namespace Memory
             ButtonStart.Enabled = false;
             board1.Visible = true;
             if (AssignIconsToSquares != null)
-                AssignIconsToSquares();  //zastanowić się, czy da sięjakoś inaczej dostać do tableLayoutPanel z Board
+                AssignIconsToSquares(); 
             
         }
 
-        public Board NewBoard { set { _NewBoard = value; } get { return _NewBoard; } }
+        public Board NewBoard {
+            set
+            {
+                _NewBoard = value;
+            }
+            get
+            {
+                return _NewBoard;
+            }
+        }
 
         public TableLayoutPanel TableLayoutPanel
-        { set {  _TableLayoutPanel = value; } get { return _TableLayoutPanel; } }
-        IVievBoard IViev.IVievBoard { get { return board1; } }
-        public string CorrectChoicesLabel { get { return LabelCorrectChoice.Text; } set { LabelCorrectChoice.Text = value; } }
-        public string WrongChoicesLabel { get { return LabelWrongChoice.Text; } set { LabelWrongChoice.Text = value; } }
+        {
+            set
+            {
+                _TableLayoutPanel = value;
+            }
+            get
+            {
+                return _TableLayoutPanel;
+            }
+        }
+        IVievBoard IViev.IVievBoard
+        {
+            get
+            {
+                return board1;
+            }
+        }
+        public string CorrectChoicesLabel
+        { get
+            {
+                return LabelCorrectChoice.Text;
+            }
+            set
+            {
+                LabelCorrectChoice.Text = value;
+            }
+        }
+        public string WrongChoicesLabel
+        {
+            get
+            {
+                return LabelWrongChoice.Text;
+            }
+            set
+            {
+                LabelWrongChoice.Text = value;
+            }
+        }
         public void ResetB()
         {
             ButtonReset.Enabled = false;
