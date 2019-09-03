@@ -6,4 +6,3 @@ Silesia University od Technology - tasks from OOP classes.
 2) Simple Total Commander with MVP model
 3) Memory game
 
-# Term project:
